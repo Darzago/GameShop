@@ -1,6 +1,11 @@
 package persistence;
 
-public class Offer {
+import java.io.Serializable;
+
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
+public class Offer implements Serializable{
 	private int gameId;
 	private int userId;
 	private double price;

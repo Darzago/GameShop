@@ -1,8 +1,13 @@
 package persistence;
 
 import java.awt.Image;
+import java.io.Serializable;
 
-public class Game {
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
+public class Game implements Serializable{
+	
 	private int gameId;
 	private String name;
 	private Image image;
