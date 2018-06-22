@@ -2,9 +2,9 @@ package controller;
 
 
 
-import persistence.Offer;
-
 import javax.faces.bean.ManagedBean;
+
+import model.Offer;
 
 @ManagedBean
 public class OfferBean {

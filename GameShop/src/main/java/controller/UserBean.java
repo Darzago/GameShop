@@ -1,9 +1,8 @@
 package controller;
 
-import persistence.User;
-
-
 import javax.faces.bean.ManagedBean;
+
+import model.User;
 
 @ManagedBean
 public class UserBean {

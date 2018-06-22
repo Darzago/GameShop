@@ -2,7 +2,7 @@ package controller;
 
 import javax.faces.bean.ManagedBean;
 
-import persistence.Game;
+import model.Game;
 
 @ManagedBean
 public class GameBean {
