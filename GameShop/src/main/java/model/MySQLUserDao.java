@@ -1,17 +1,62 @@
 package model;
 
-public class MySQLUserDao implements UserDao{
+import java.security.MessageDigest;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
+public class MySQLUserDao implements UserDao
+{
+
+Connection con;
+	
+	public MySQLUserDao() {
+		try {
+			//TODO
+			con = Configuration.getConnection();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	@Override
-	public boolean registerUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean registerUser(User user) throws SQLException 
+	{
+		PreparedStatement pstmt = con.prepareStatement("select USER_ID from USERS WHERE email = "+user.getEmail());
+        ResultSet rs = pstmt.executeQuery();
+		if(rs.next())
+			return false;
+		else
+		{	
+			String insertStatement = "INSERT INTO USERS VALUES(?,?,?)";
+        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	insertstmt.setString(0, user.getName());
+        	insertstmt.setString(1,  user.getPassword());
+        	insertstmt.setString(2, user.getName());
+        	
+        	insertstmt.executeUpdate();
+        	return true;
+		}
 	}
 
 	@Override
-	public boolean checkUserPw(User user) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean checkUserPw(User user) throws SQLException
+	{
+		PreparedStatement pstmt = con.prepareStatement("select PASSWORD from USERS WHERE USER_ID = "+user.getUserId());
+        ResultSet rs = pstmt.executeQuery();
+		if(rs.next())
+		{
+			if(rs.getString(0)==user.getPassword())
+				return true;
+			else 
+				return false;
+		}
+		else
+		{	
+        	return false;
+		}
 	}
 
 }

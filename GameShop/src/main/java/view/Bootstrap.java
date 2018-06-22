@@ -1,4 +1,4 @@
-package presentation.servlets;
+package view;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import logic.Configuration;
+import model.Configuration;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -41,10 +41,10 @@ public class Bootstrap extends HttpServlet {
 			PreparedStatement dropstmt = con.prepareStatement(dropStatement);
 			dropstmt.execute();
 			dropStatement = "DROP TABLE IF EXISTS Users";
-			PreparedStatement dropstmt = con.prepareStatement(dropStatement);
+			dropstmt = con.prepareStatement(dropStatement);
 			dropstmt.execute();
 			dropStatement = "DROP TABLE IF EXISTS Games";
-			PreparedStatement dropstmt = con.prepareStatement(dropStatement);
+			dropstmt = con.prepareStatement(dropStatement);
 			dropstmt.execute();
 			
 	        String 	createStatement	= "CREATE TABLE GAMES(GAME_ID INT PRIMARY KEY AUTOINCREMENT,"
@@ -58,7 +58,7 @@ public class Bootstrap extends HttpServlet {
 	        		+ "NAME VARCHAR2(255),"
 	        		+ "PASSWORD VARCHAR2,"
 	        		+ "EMAIL VARCHAR2)";
-	        PreparedStatement createstmt = con.prepareStatement(createStatement);
+	        createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
 	        createStatement	= "CREATE TABLE OFFERS("
@@ -67,7 +67,7 @@ public class Bootstrap extends HttpServlet {
 	        		+ "PRICE DOUBLE,"
 	        		+ "AMOUNT INT)"
 	        		+ "PRIMARY KEY(GAME_ID,USER_ID)";
-	        PreparedStatement createstmt = con.prepareStatement(createStatement);
+	        createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
 	        
@@ -75,36 +75,36 @@ public class Bootstrap extends HttpServlet {
         	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO GAMES VALUES('GAME 2', NULL, Geht so Spiel)";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO GAMES VALUES('GAME 3', NULL, Sehr tolles Spiel)";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO GAMES VALUES('GAME 4', NULL, Spiel)";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
         	insertStatement = "INSERT INTO USERS VALUES('USER 1', '1234', 'Tolles@Spiel.de')";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO USERS VALUES('USER 2', 'abcd', 'Geht@so.Spiel')";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO USERS VALUES('USER 3', '4567', 'Sehr@tolles.Spiel')";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO USERS VALUES('USER 4', 'efgh', 'ein@Spiel.de')";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
         	insertStatement = "INSERT INTO OFFERS VALUES(0, 2, 45.20, 24)";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO OFFERS VALUES(0, 1, 50, 4)";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO OFFERS VALUES(1, 3, 5, 1)";
-        	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
+        	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
 		
 			
