@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class Game implements Serializable{
 	
-	private int gameId;
+	private int gameid;
 	private String name;
 	private Image image;
 	private String description;
@@ -14,13 +14,13 @@ public class Game implements Serializable{
 	 * @return the gameId
 	 */
 	public int getGameId() {
-		return gameId;
+		return gameid;
 	}
 	/**
 	 * @param gameId the gameId to set
 	 */
 	public void setGameId(int gameId) {
-		this.gameId = gameId;
+		this.gameid = gameId;
 	}
 	/**
 	 * @return the name
