@@ -1,4 +1,4 @@
-package presentation.init;
+package view;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
