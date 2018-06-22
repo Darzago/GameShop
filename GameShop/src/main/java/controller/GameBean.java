@@ -10,12 +10,13 @@ import model.Game;
 @ManagedBean
 public class GameBean {
 	
-	private List<Game> gameList = new DAOFactory().getGameDao().getAllGames();
+	private List<Game> gameList = new ArrayList<Game>();
 
 	/**
 	 * @return the gameList
 	 */
 	public List<Game> getGameList() {
+		gameList = new DAOFactory().getGameDao().getAllGames();
 		return gameList;
 	}
 
