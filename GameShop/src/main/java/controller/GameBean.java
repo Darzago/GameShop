@@ -1,26 +1,34 @@
 package controller;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
+import model.DAOFactory;
 import model.Game;
 
 @ManagedBean
 public class GameBean {
-	private Game game;
+	
+	private List<Game> gameList;
 
 	/**
-	 * @return the game
+	 * @return the gameList
 	 */
-	public Game getGame() {
-		return game;
+	public List<Game> getGameList() {
+		return gameList;
 	}
 
 	/**
-	 * @param game the game to set
+	 * @param gameList the gameList to set
 	 */
-	public void setGame(Game game) {
-		this.game = game;
+	public void setGameList(List<Game> gameList) {
+		this.gameList = gameList;
 	}
-	
-	
+
+	public void loadGameList()
+	{
+		this.gameList = new DAOFactory().getGameDao().getAllGames();
+	}
+
 }

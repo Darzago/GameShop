@@ -1,7 +1,7 @@
 package controller;
 
 
-
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 
 import model.Offer;
