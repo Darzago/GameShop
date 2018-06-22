@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean
 public class Offer implements Serializable{
 	private int gameId;
 	private int userId;
@@ -58,14 +57,5 @@ public class Offer implements Serializable{
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
-	public Offer(int gameId, int userId, double price, int amount) {
-		super();
-		this.gameId = gameId;
-		this.userId = userId;
-		this.price = price;
-		this.amount = amount;
-	}
-	
 	
 }

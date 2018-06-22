@@ -2,9 +2,6 @@ package persistence;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-
-@ManagedBean
 public class User implements Serializable{
 	private int userId;
 	private String name;
@@ -58,14 +55,5 @@ public class User implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public User(int userId, String name, String password, String email) {
-		super();
-		this.userId = userId;
-		this.name = name;
-		this.password = password;
-		this.email = email;
-	}
-	
 	
 }

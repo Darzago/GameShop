@@ -3,9 +3,7 @@ package persistence;
 import java.awt.Image;
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
 
-@ManagedBean
 public class Game implements Serializable{
 	
 	private int gameId;
@@ -60,15 +58,6 @@ public class Game implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public Game(int gameId, String name, Image image, String description) {
-		super();
-		this.gameId = gameId;
-		this.name = name;
-		this.image = image;
-		this.description = description;
-	}
-	
-	
+
 	
 }
