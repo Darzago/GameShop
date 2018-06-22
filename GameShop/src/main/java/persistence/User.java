@@ -2,9 +2,6 @@ package persistence;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-
-@ManagedBean
 public class User implements Serializable{
 	private int userId;
 	private String name;
