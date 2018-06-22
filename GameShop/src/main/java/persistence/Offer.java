@@ -59,13 +59,4 @@ public class Offer implements Serializable{
 		this.amount = amount;
 	}
 	
-	public Offer(int gameId, int userId, double price, int amount) {
-		super();
-		this.gameId = gameId;
-		this.userId = userId;
-		this.price = price;
-		this.amount = amount;
-	}
-	
-	
 }

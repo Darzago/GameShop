@@ -60,15 +60,6 @@ public class Game implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public Game(int gameId, String name, Image image, String description) {
-		super();
-		this.gameId = gameId;
-		this.name = name;
-		this.image = image;
-		this.description = description;
-	}
-	
-	
+
 	
 }
