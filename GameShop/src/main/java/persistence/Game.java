@@ -3,9 +3,7 @@ package persistence;
 import java.awt.Image;
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
 
-@ManagedBean
 public class Game implements Serializable{
 	
 	private int gameId;
