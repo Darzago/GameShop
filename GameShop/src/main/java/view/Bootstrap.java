@@ -47,60 +47,60 @@ public class Bootstrap extends HttpServlet {
 			dropstmt = con.prepareStatement(dropStatement);
 			dropstmt.execute();
 			
-	        String 	createStatement	= "CREATE TABLE GAMES(GAME_ID INT PRIMARY KEY AUTOINCREMENT,"
+	        String 	createStatement	= "CREATE TABLE GAMES(GAME_ID INT PRIMARY KEY AUTO_INCREMENT,"
 	        		+ "NAME VARCHAR2(255),"
-	        		+ "PICTURE ORDSYS.ORDIMGF,"
+	        		+ "PICTURE BLOB,"
 	        		+ "DESCRIPTION TEXT)";
 	        PreparedStatement createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
-	        		createStatement	= "CREATE TABLE USERS(USER_ID INT PRIMARY KEY AUTOINCREMENT,"
+	        		createStatement	= "CREATE TABLE USERS(USER_ID INT PRIMARY KEY AUTO_INCREMENT,"
 	        		+ "NAME VARCHAR2(255),"
-	        		+ "PASSWORD VARCHAR2,"
-	        		+ "EMAIL VARCHAR2)";
+	        		+ "PASSWORD VARCHAR2(255),"
+	        		+ "EMAIL VARCHAR2(255))";
 	        createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
 	        createStatement	= "CREATE TABLE OFFERS("
-	        		+ "GAME_ID INT FOREIGN KEY GAMES(GAME_ID),"
-	        		+ "USER_ID INT FOREIGN KEY USERS(USER_ID),"
+	        		+ "GAME_ID INT REFERENCES GAMES(GAME_ID),"
+	        		+ "USER_ID INT REFERENCES USERS(USER_ID),"
 	        		+ "PRICE DOUBLE,"
-	        		+ "AMOUNT INT)"
-	        		+ "PRIMARY KEY(GAME_ID,USER_ID)";
+	        		+ "AMOUNT INT,"
+	        		+ "PRIMARY KEY(GAME_ID,USER_ID))";
 	        createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
 	        
-        	String insertStatement = "INSERT INTO GAMES VALUES('GAME 1', NULL, Tolles Spiel)";
+        	String insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAME 1', NULL, 'Tolles Spiel')";
         	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES VALUES('GAME 2', NULL, Geht so Spiel)";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAME 2', NULL, 'Geht so Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES VALUES('GAME 3', NULL, Sehr tolles Spiel)";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAME 3', NULL, 'Sehr tolles Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES VALUES('GAME 4', NULL, Spiel)";
-        	 insertstmt = con.prepareStatement(insertStatement);
-        	insertstmt.executeUpdate();
-        	
-        	insertStatement = "INSERT INTO USERS VALUES('USER 1', '1234', 'Tolles@Spiel.de')";
-        	 insertstmt = con.prepareStatement(insertStatement);
-        	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO USERS VALUES('USER 2', 'abcd', 'Geht@so.Spiel')";
-        	 insertstmt = con.prepareStatement(insertStatement);
-        	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO USERS VALUES('USER 3', '4567', 'Sehr@tolles.Spiel')";
-        	 insertstmt = con.prepareStatement(insertStatement);
-        	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO USERS VALUES('USER 4', 'efgh', 'ein@Spiel.de')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAME 4', NULL, 'Meh Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
-        	insertStatement = "INSERT INTO OFFERS VALUES(0, 2, 45.20, 24)";
+        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 1', '1234', 'Tolles@Spiel.de')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES(0, 1, 50, 4)";
+        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 2', 'abcd', 'Geht@so.Spiel')";
+        	 insertstmt = con.prepareStatement(insertStatement);
+        	insertstmt.executeUpdate();
+        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 3', '4567', 'Sehr@tolles.Spiel')";
+        	 insertstmt = con.prepareStatement(insertStatement);
+        	insertstmt.executeUpdate();
+        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 4', 'efgh', 'ein@Spiel.de')";
+        	 insertstmt = con.prepareStatement(insertStatement);
+        	insertstmt.executeUpdate();
+        	
+        	insertStatement = "INSERT INTO OFFERS VALUES(2, 2, 45.20, 24)";
+        	 insertstmt = con.prepareStatement(insertStatement);
+        	insertstmt.executeUpdate();
+        	insertStatement = "INSERT INTO OFFERS VALUES(2, 1, 50, 4)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO OFFERS VALUES(1, 3, 5, 1)";
@@ -122,10 +122,10 @@ public class Bootstrap extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Hello HelloDataSource\n"); 
-		response.getWriter().append("Values from table 'Articles':\n");
+		response.getWriter().append("Values from table 'Games':\n");
 		
-		String query = "select ID,NAME"
-        		+ " from ARTICLES";
+		String query = "select *"
+        		+ " from Games";
 
         try
         {
@@ -136,8 +136,7 @@ public class Bootstrap extends HttpServlet {
             ResultSet rs = stmt.executeQuery(query);
            
             while (rs.next()) {
-            	response.getWriter().append(rs.getString("ID") + "\t" + rs.getString("NAME") + "\n");
-            	//System.out.println(rs.getString("NAME"));
+            	response.getWriter().append(rs.getInt("Game_ID") + "\t" + rs.getString("NAME") + "\n");
             }
             
         }

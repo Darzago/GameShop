@@ -40,7 +40,7 @@ public class MySQLGameDao implements GameDao{
             	//TODO
             	newGame.setImage(null);
             	newGame.setDescription(rs.getString("DESCRIPTION"));
-                tempList.add(newGame);
+            	tempList.add(newGame);
             }
             
         }
