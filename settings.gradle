@@ -1,0 +1,9 @@
+rootProject.name = 'praktikum.webeng'
+
+include 'helloJava'
+include 'helloServlet'
+include 'helloDataSource'
+include 'webeng02'
+include 'Praktikum03'
+include 'WebengShop'
+include 'HelloJsf'
