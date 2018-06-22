@@ -15,5 +15,10 @@
             <var>msg</var>
         </resource-bundle>
     </application>
+    
+ 	<managed-bean>
+		<managed-bean-name>beanList</managed-bean-name>
+		<managed-bean-class>controller.GameBean</managed-bean-class>
+	</managed-bean> 
 
 </faces-config>
