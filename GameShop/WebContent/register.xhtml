@@ -7,27 +7,12 @@
 </h:head>
 <h:body>
 	<h1>Register</h1>
-	<form name="form1" action="kontakt.php" method="post">
-		 <table width="50%">
-			 <tr>
-				 <td width="31%">Name: </td>
-				 <td width="69%"><input name="name" size="20" /></td>
-				 </tr>
-				 <tr>
-				 <td width="31%">E-Mail:</td>
-				 <td width="69%"><input name="mail" size="20" /></td>
-			 </tr>
-			 <tr>
-				 <td width="31%">Password:</td>
-				 <td width="69%"><input name="betreff" size="20" /></td>
-			 </tr>
-			 <tr>
-				 <td width="31%">Text:</td>
-				 <td width="69%"><textarea name="nachricht" rows="6" cols="50"></textarea></td>
-			 </tr>
-		 </table>
-	 <input type="submit" value="Abschicken" name="Abschicken" />
-	 <input name="reset" type="reset" value="LÃ¶schen" />
-	 </form>
+	<h:form id="form">
+		<h:inputText id="name" value="#{userBean.name}"/>
+		<h:inputText id="password" value="#{userBean.password}"/>
+		<h:inputText id="email" value="#{userBean.email}"/>
+		<h:commandButton id="save" value="register" action=“#{userBean.registerUser}“/>
+	</h:form> 
+
 </h:body>
 </html>
