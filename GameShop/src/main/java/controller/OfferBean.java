@@ -1,14 +1,12 @@
 package controller;
 
-
-import java.util.List;
 import javax.faces.bean.ManagedBean;
 
 import model.Offer;
 
 @ManagedBean
 public class OfferBean {
-	private Offer offer;
+	private Offer offer = new Offer();
 
 	/**
 	 * @return the offer
