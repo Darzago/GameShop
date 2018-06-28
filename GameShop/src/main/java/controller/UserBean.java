@@ -1,5 +1,6 @@
 package controller;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -24,10 +25,15 @@ public class UserBean {
 		this.user = user;
 	}
 	
+	@PostConstruct
+	public void init() {
+	    user = new User();
+	}
+	
+	
 	public void registerUser()
 	{
-		System.out.println(user.getName() + user.getEmail() + user.getPassword());
-		
+		System.out.println(user.getName());
 		
 	}
 	
