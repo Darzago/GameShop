@@ -10,7 +10,7 @@
 	<h:form id="form">
 		<h:inputText id="name" value="#{userBean.user.name}"/>
 		<h:inputText id="password" value="#{userBean.user.password}"/>
-		<h:inputText id="email" value="#{userBean.user.email}"/>
+		<h:inputText id="email" value="#{userBean.user.email}" validator="#{GameShopValidator.emailValidate}"/>
 		<h:commandButton id="save" value="register" action="#{userBean.registerUser}"/>
 	</h:form> 
 
