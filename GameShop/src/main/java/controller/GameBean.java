@@ -3,11 +3,13 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import model.DAOFactory;
 import model.Game;
+import model.User;
 
 @ManagedBean (name="gameBean")
 @SessionScoped
@@ -30,5 +32,6 @@ public class GameBean {
 	public void setGamelist(List<Game> gameList) {
 		this.gamelist = gameList;
 	}
+
 
 }
