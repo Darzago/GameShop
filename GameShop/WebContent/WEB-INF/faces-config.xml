@@ -60,5 +60,15 @@
 		<to-view-id>/buyGame.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-
+	<navigation-rule>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Success</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+		<from-outcome>Failed</from-outcome>
+		<to-view-id>/createOffer.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

@@ -37,10 +37,17 @@ public class UserBean {
 	
 	public String registerUser() throws SQLException
 	{
-		UserDao userdao = DAOFactory.getUserDao();
-		if(userdao.registerUser(user))
+		if(DAOFactory.getUserDao().registerUser(user))
 			return "Success";
 		else
+			return "Failed";
+	}
+	
+	public String loginUser()  throws SQLException
+	{
+		if(DAOFactory.getUserDao().checkUserPw(user))
+			return "Success";
+		else 
 			return "Failed";
 	}
 	

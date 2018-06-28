@@ -43,7 +43,7 @@ Connection con;
 	@Override
 	public boolean checkUserPw(User user) throws SQLException
 	{
-		PreparedStatement pstmt = con.prepareStatement("select PASSWORD from USERS WHERE USER_ID = "+user.getUserId());
+		PreparedStatement pstmt = con.prepareStatement("select PASSWORD from USERS WHERE USER_ID = '"+user.getUserId() + "'");
         ResultSet rs = pstmt.executeQuery();
 		if(rs.next())
 		{
