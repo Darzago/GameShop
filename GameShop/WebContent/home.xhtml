@@ -6,6 +6,12 @@
 <h:head>
 </h:head>
 <h:body>
+	<ul>
+		<li><a href="login.xhtml">Login</a></li>
+		<li><a href="createOffer.xhtml">Create Offer</a></li>
+		<li><a href="myOffers.xhtml">My Offers</a></li>
+	</ul>
+	
 	<h:dataTable var="ergebnis" value="#{gameBean.gamelist}">
 		<h:column>
 			<h:outputText value="#{ergebnis.name}"/>
