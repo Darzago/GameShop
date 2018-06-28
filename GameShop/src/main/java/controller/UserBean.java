@@ -24,15 +24,11 @@ public class UserBean {
 		this.user = user;
 	}
 	
-	public String registerUser()
+	public void registerUser()
 	{
-		//Insert dao shit
-		if(user ==  null)
-		{
-			return "cancel";
-		}
+		System.out.println(user.getName() + user.getEmail() + user.getPassword());
 		
-		return "ok";
+		
 	}
 	
 	
