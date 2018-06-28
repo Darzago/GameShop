@@ -1,10 +1,14 @@
 package controller;
 
+import java.sql.SQLException;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import model.DAOFactory;
 import model.User;
+import model.UserDao;
 
 @ManagedBean (name="userBean")
 @SessionScoped
@@ -31,10 +35,13 @@ public class UserBean {
 	}
 	
 	
-	public void registerUser()
+	public String registerUser() throws SQLException
 	{
-		System.out.println(user.getName());
-		
+		UserDao userdao = DAOFactory.getUserDao();
+		if(userdao.registerUser(user))
+			return "Success";
+		else
+			return "Failed";
 	}
 	
 	

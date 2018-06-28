@@ -1,17 +1,17 @@
 package model;
 
 public class DAOFactory {
-	public GameDao getGameDao()
+	public static GameDao getGameDao()
 	{
 		return new MySQLGameDao();
 	}
 	
-	public OfferDao getOfferDao()
+	public  static OfferDao getOfferDao()
 	{
 		return new MySQLOfferDao();
 	}
 	
-	public UserDao getUserDao()
+	public static UserDao getUserDao()
 	{
 		return new MySQLUserDao();
 	}

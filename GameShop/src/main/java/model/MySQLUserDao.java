@@ -1,6 +1,5 @@
 package model;
 
-import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,17 +23,17 @@ Connection con;
 	@Override
 	public boolean registerUser(User user) throws SQLException 
 	{
-		PreparedStatement pstmt = con.prepareStatement("select USER_ID from USERS WHERE email = "+user.getEmail());
+		PreparedStatement pstmt = con.prepareStatement("select USER_ID from USERS WHERE email = '"+user.getEmail()+"'");
         ResultSet rs = pstmt.executeQuery();
 		if(rs.next())
 			return false;
 		else
 		{	
-			String insertStatement = "INSERT INTO USERS VALUES(?,?,?)";
+			String insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES(?,?,?)";
         	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
-        	insertstmt.setString(0, user.getName());
-        	insertstmt.setString(1,  user.getPassword());
-        	insertstmt.setString(2, user.getName());
+        	insertstmt.setString(1, user.getName());
+        	insertstmt.setString(2,  user.getPassword());
+        	insertstmt.setString(3, user.getName());
         	
         	insertstmt.executeUpdate();
         	return true;
