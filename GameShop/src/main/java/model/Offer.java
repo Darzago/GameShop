@@ -6,18 +6,18 @@ import javax.faces.bean.ManagedBean;
 
 
 public class Offer implements Serializable{
-	private String gameName;
+	private String name;
 	private String email;
 	private double price;
 	private int amount;
 	
-	public String getGameName() 
+	public String getName() 
 	{
-		return gameName;
+		return name;
 	}
-	public void setGameName(String gameName) 
+	public void setName(String gameName) 
 	{
-		this.gameName = gameName;
+		this.name = gameName;
 	}
 	/**
 	 * @return the user Email
