@@ -37,7 +37,7 @@ public class MySQLOfferDao implements OfferDao{
             while (rs.next()) 
             {
             	Offer newOffer = new Offer();
-            	newOffer.setGameName(rs.getString("Name"));
+            	newOffer.setName(rs.getString("Name"));
             	newOffer.setEmail(rs.getString("EMAIL"));
             	newOffer.setPrice(rs.getDouble("PRICE"));
             	newOffer.setPrice(rs.getInt("AMOUNT"));
@@ -60,7 +60,7 @@ public class MySQLOfferDao implements OfferDao{
 		try 
 		{
 			PreparedStatement pstmt = con.prepareStatement("INSERT INTO Offers(Name, Email, Price, Amount) VALUES(?,?,?,?)");
-			pstmt.setString(1, offer.getGameName());
+			pstmt.setString(1, offer.getName());
 			pstmt.setString(2, offer.getEmail());
 			pstmt.setDouble(3, offer.getPrice());
 			pstmt.setInt(4, offer.getAmount());
@@ -78,7 +78,7 @@ public class MySQLOfferDao implements OfferDao{
 		{
 			PreparedStatement pstmt = con.prepareStatement("DELETE FROM Offers WHERE Email = ? AND Name = ?");
 			pstmt.setString(1, offer.getEmail());
-			pstmt.setString(2, offer.getGameName());
+			pstmt.setString(2, offer.getName());
 			pstmt.executeUpdate();
 		}
 		catch (SQLException e) {
@@ -95,7 +95,7 @@ public class MySQLOfferDao implements OfferDao{
 			PreparedStatement pstmt = con.prepareStatement("UPDATE Offers SET PRICE=?, AMOUNT=? WHERE Name = ? AND Email = ?");
 			pstmt.setDouble(1, offer.getPrice());
 			pstmt.setInt(2, offer.getAmount());
-			pstmt.setString(3, offer.getGameName());
+			pstmt.setString(3, offer.getName());
 			pstmt.setString(4, offer.getEmail());
 			pstmt.executeUpdate();
 		}
