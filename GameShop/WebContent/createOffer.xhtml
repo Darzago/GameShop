@@ -7,28 +7,15 @@
 </h:head>
 <h:body>
 	<h1>Create Offer</h1>
-	<form name="form1" action="kontakt.php" method="post">
-		 <table width="50%">
-			 <tr>
-				 <td width="31%">Game Name: </td>
-				 <td width="69%"><h:inputText name="name" size="20" value="#{offerBean.offer.name}"/></td>
+	
+	<h:form id="form">
+		<h:inputText id="name" value="#{offerBean.offer.name}"/>
+		<h:inputText id="password" value="#{offerBean.offer.email}"/>
+		<h:inputText id="price" value="#{offerBean.offer.price}" />
+		<h:inputText id="amount" value="#{offerBean.offer.amount}" />
+		<h:commandButton id="save" value="register" action="./home.xhtml"/>
+		<h:commandButton value="cancel" action="./createOffer.xhtml" immediate="true"/>
+	</h:form> 
 
-			 </tr>
-			 <tr>
-				 <td width="31%">Description:</td>
-				 <td width="69%"><input name="description" size="20" /></td>
-			 </tr>
-			 <tr>
-				 <td width="31%">Price:</td>
-				 <td width="69%"><input name="price" size="20" /></td>
-			 </tr>
-			 <tr>
-				 <td width="31%">Amount:</td>
-				 <td width="69%"><input name="amount" size="20" /></td>
-			 </tr>
-		 </table>
-	 <input type="submit" value="create offer" name="createOffer" />
-	 <input name="reset" type="reset" value="delete" />
-	 </form>
 </h:body>
 </html>

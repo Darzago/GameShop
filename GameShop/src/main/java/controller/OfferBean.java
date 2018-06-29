@@ -1,10 +1,12 @@
 package controller;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import model.Offer;
 
-@ManagedBean
+@ManagedBean (name="offerBean")
+@SessionScoped
 public class OfferBean {
 	private Offer offer = new Offer();
 
