@@ -13,13 +13,13 @@
 	</ul>
 	
 	<h:dataTable var="ergebnis" value="#{gameBean.gamelist}">
-		<h:column>
+		<h:column headerText="Name">
 			<h:outputText value="#{ergebnis.name}"/>
 		</h:column>
-		<h:column>
+		<h:column headerText="Description">
 			<h:outputText value="#{ergebnis.description}"/>
 		</h:column>
-		<h:column>
+		<h:column headerText="Details">
 			<a href="gameDetail.xhtml">Details</a>
 		</h:column>
 	</h:dataTable>

@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -13,12 +14,14 @@ import model.Offer;
 @SessionScoped
 public class OfferListBean {
 	
-	private List<Offer> offerlist;
+	private List<Offer> offerlist = new ArrayList<Offer>();
 
 	/**
 	 * @return the offerlist
 	 */
 	public List<Offer> getOfferlist() {
+		this.offerlist = DAOFactory.getOfferDao().getOffersForGame(new Game());
+		
 		return offerlist;
 	}
 
