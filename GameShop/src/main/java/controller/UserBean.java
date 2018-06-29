@@ -13,7 +13,7 @@ import model.UserDao;
 @ManagedBean (name="userBean")
 @SessionScoped
 public class UserBean {
-	private User user;
+	private User user = new User();
 
 	/**
 	 * @return the user
@@ -28,12 +28,6 @@ public class UserBean {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	@PostConstruct
-	public void init() {
-	    user = new User();
-	}
-	
 	
 	public String registerUser() throws SQLException
 	{

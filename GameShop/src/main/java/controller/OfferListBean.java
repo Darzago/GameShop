@@ -1,0 +1,35 @@
+package controller;
+
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import model.DAOFactory;
+import model.Game;
+import model.Offer;
+
+@ManagedBean (name="offerlistbean")
+@SessionScoped
+public class OfferListBean {
+	
+	private List<Offer> offerlist;
+
+	/**
+	 * @return the offerlist
+	 */
+	public List<Offer> getOfferlist() {
+		return offerlist;
+	}
+
+	/**
+	 * @param offerlist the offerlist to set
+	 */
+	public void setOfferlist(List<Offer> offerlist) {
+		this.offerlist = offerlist;
+	}
+
+
+	
+	
+}

@@ -11,10 +11,13 @@ import java.util.List;
 public class MySQLOfferDao implements OfferDao{
 	
 	Connection con;
-
+	
+	//TODO Get offers by User
+	
 	@Override
 	public List<Offer> getOffersForGame(Game game) {
 
+		//TODO Bis jetzt noch nicht ans game gebundene 
         List<Offer> tempList = new ArrayList<Offer>();
         
         try

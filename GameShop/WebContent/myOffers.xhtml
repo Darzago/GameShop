@@ -7,12 +7,18 @@
 </h:head>
 <h:body>
 	<h1>My Offers</h1>
-	<h:dataTable var="ergebnis" value="#{gameBean.gamelist}">
+	<h:dataTable var="ergebnis" value="#{offerlistbean.offerList}">
 		<h:column>
-			<h:outputText value="#{ergebnis.name}"/>
+			<h:outputText value="#{ergebnis.gameId}"/>
 		</h:column>
 		<h:column>
-			<h:outputText value="#{ergebnis.description}"/>
+			<h:outputText value="#{ergebnis.userId}"/>
+		</h:column>
+		<h:column>
+			<h:outputText value="#{ergebnis.price}"/>
+		</h:column>
+		<h:column>
+			<h:outputText value="#{ergebnis.amount}"/>
 		</h:column>
 	</h:dataTable>
 </h:body>
