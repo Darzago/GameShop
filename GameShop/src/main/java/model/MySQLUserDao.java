@@ -23,7 +23,7 @@ Connection con;
 	@Override
 	public boolean registerUser(User user) throws SQLException 
 	{
-		PreparedStatement pstmt = con.prepareStatement("select USER_ID from USERS WHERE email = '"+user.getEmail()+"'");
+		PreparedStatement pstmt = con.prepareStatement("select * from USERS WHERE email = '"+user.getEmail()+"'");
         ResultSet rs = pstmt.executeQuery();
 		if(rs.next())
 			return false;
@@ -33,7 +33,7 @@ Connection con;
         	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.setString(1, user.getName());
         	insertstmt.setString(2,  user.getPassword());
-        	insertstmt.setString(3, user.getName());
+        	insertstmt.setString(3, user.getEmail());
         	
         	insertstmt.executeUpdate();
         	return true;

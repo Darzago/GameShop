@@ -47,8 +47,7 @@ public class Bootstrap extends HttpServlet {
 			dropstmt = con.prepareStatement(dropStatement);
 			dropstmt.execute();
 			
-	        String 	createStatement	= "CREATE TABLE GAMES(GAME_ID INT PRIMARY KEY AUTO_INCREMENT,"
-	        		+ "NAME VARCHAR2(255),"
+	        String 	createStatement	= "CREATE TABLE GAMES(NAME VARCHAR2(255) PRIMARY KEY,"
 	        		+ "PICTURE BLOB,"
 	        		+ "DESCRIPTION TEXT)";
 	        PreparedStatement createstmt = con.prepareStatement(createStatement);
@@ -61,11 +60,11 @@ public class Bootstrap extends HttpServlet {
 	        createstmt.executeUpdate();
 	        
 	        createStatement	= "CREATE TABLE OFFERS("
-	        		+ "GAME_ID INT REFERENCES GAMES(GAME_ID),"
+	        		+ "Name VARCHAR(255) REFERENCES GAMES(Name),"
 	        		+ "EMAIL VARCHAR2(255) REFERENCES USERS(EMAIL),"
 	        		+ "PRICE DOUBLE,"
 	        		+ "AMOUNT INT,"
-	        		+ "PRIMARY KEY(GAME_ID,EMAIL))";
+	        		+ "PRIMARY KEY(Name,EMAIL))";
 	        createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
@@ -96,13 +95,13 @@ public class Bootstrap extends HttpServlet {
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
-        	insertStatement = "INSERT INTO OFFERS VALUES(2, 'sehr@tolles.spiel', 45.20, 24)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('GAME 4', 'sehr@tolles.spiel', 45.20, 24)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES(3, 'sehr@tolles.spiel', 50, 4)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('GAME 3', 'sehr@tolles.spiel', 50, 4)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES(1, 'ein@spiel.de', 5, 1)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('GAME 4', 'ein@spiel.de', 5, 1)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
 		
@@ -135,7 +134,7 @@ public class Bootstrap extends HttpServlet {
             ResultSet rs = stmt.executeQuery(query);
            
             while (rs.next()) {
-            	response.getWriter().append(rs.getInt("Game_ID") + "\t" + rs.getString("NAME") + "\n");
+            	response.getWriter().append(rs.getString("NAME") + "\n");
             }
             
         }

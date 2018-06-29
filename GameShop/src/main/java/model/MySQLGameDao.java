@@ -35,7 +35,6 @@ public class MySQLGameDao implements GameDao{
             while (rs.next()) 
             {
             	Game newGame = new Game();
-            	newGame.setGameId(rs.getInt("GAME_ID"));
             	newGame.setName(rs.getString("NAME"));
             	//TODO
             	newGame.setImage(null);
@@ -57,10 +56,9 @@ public class MySQLGameDao implements GameDao{
 		try 
 		{
 			//TODO Pictures
-			PreparedStatement pstmt = con.prepareStatement("INSERT INTO GAMES(GAME_ID, NAME, DESCRIPTION) VALUES(?,?,?)");
-			pstmt.setInt(1, game.getGameId());
-			pstmt.setString(2, game.getName());
-			pstmt.setString(3, game.getDescription());
+			PreparedStatement pstmt = con.prepareStatement("INSERT INTO GAMES(NAME, DESCRIPTION) VALUES(?,?,?)");
+			pstmt.setString(1, game.getName());
+			pstmt.setString(2, game.getDescription());
 			pstmt.executeUpdate();
 		}
 		catch (SQLException e) {
@@ -73,8 +71,8 @@ public class MySQLGameDao implements GameDao{
 	public void removeGame(Game game) {
 		try 
 		{
-			PreparedStatement pstmt = con.prepareStatement("DELETE FROM Games GAME_ID = ?");
-			pstmt.setInt(1, game.getGameId());
+			PreparedStatement pstmt = con.prepareStatement("DELETE FROM Games Name = ?");
+			pstmt.setString(1, game.getName());
 			pstmt.executeUpdate();
 		}
 		catch (SQLException e) {
@@ -88,11 +86,11 @@ public class MySQLGameDao implements GameDao{
 	public void updateGame(Game game) {
 		try 
 		{
-			PreparedStatement pstmt = con.prepareStatement("UPDATE GAMES SET NAME=?, DESCRIPTION=? WHERE GAME_ID = ?");
+			PreparedStatement pstmt = con.prepareStatement("UPDATE GAMES SET NAME=?, DESCRIPTION=? WHERE Name = ?");
 			
 			pstmt.setString(1, game.getName());
 			pstmt.setString(2, game.getDescription());
-			pstmt.setInt(3, game.getGameId());
+			pstmt.setString(3, game.getName());
 			pstmt.executeUpdate();
 		}
 		catch (SQLException e) {
