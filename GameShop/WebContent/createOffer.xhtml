@@ -12,7 +12,10 @@
 		<h:inputText id="name" value="#{offerBean.offer.name}"/>
 		<h:inputText id="password" value="#{offerBean.offer.email}"/>
 		<h:inputText id="price" value="#{offerBean.offer.price}" />
-		<h:inputText id="amount" value="#{offerBean.offer.amount}" />
+		<h:inputText id="amount" value="#{offerBean.offer.amount}">
+			<f:validateDoubleRange minimum="0.0"/>
+			
+		</h:inputText>
 		<h:commandButton id="save" value="register" action="./home.xhtml"/>
 		<h:commandButton value="cancel" action="./createOffer.xhtml" immediate="true"/>
 	</h:form> 
