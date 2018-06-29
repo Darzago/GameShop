@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 
 public class Offer implements Serializable{
 	private int gameId;
-	private int userId;
+	private String email;
 	private double price;
 	private int amount;
 	/**
@@ -23,16 +23,16 @@ public class Offer implements Serializable{
 		this.gameId = gameId;
 	}
 	/**
-	 * @return the userId
+	 * @return the user Email
 	 */
-	public int getUserId() {
-		return userId;
+	public String getEmail() {
+		return this.email;
 	}
 	/**
-	 * @param userId the userId to set
+	 * @param email the email to set
 	 */
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	/**
 	 * @return the price

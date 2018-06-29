@@ -10,16 +10,18 @@ import model.DAOFactory;
 import model.Game;
 import model.Offer;
 
-@ManagedBean (name="offerlistbean")
+@ManagedBean (name="offerListBean")
 @SessionScoped
-public class OfferListBean {
+public class OfferListBean 
+{
 	
 	private List<Offer> offerlist = new ArrayList<Offer>();
 
 	/**
 	 * @return the offerlist
 	 */
-	public List<Offer> getOfferlist() {
+	public List<Offer> getOfferlist() 
+	{
 		this.offerlist = DAOFactory.getOfferDao().getOffersForGame(new Game());
 		
 		return offerlist;
