@@ -21,7 +21,7 @@ public class GameBean {
 	 * @return the gameList
 	 */
 	public List<Game> getGamelist() {
-		gamelist = new DAOFactory().getGameDao().getAllGames();
+		gamelist = DAOFactory.getGameDao().getAllGames();
 		System.out.println(gamelist.toString()+"die Liste");
 		return gamelist;
 	}

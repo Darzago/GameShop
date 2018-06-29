@@ -54,19 +54,18 @@ public class Bootstrap extends HttpServlet {
 	        PreparedStatement createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
-	        		createStatement	= "CREATE TABLE USERS(USER_ID INT PRIMARY KEY AUTO_INCREMENT,"
-	        		+ "NAME VARCHAR2(255),"
+	        		createStatement	= "CREATE TABLE USERS(NAME VARCHAR2(255),"
 	        		+ "PASSWORD VARCHAR2(255),"
-	        		+ "EMAIL VARCHAR2(255))";
+	        		+ "EMAIL VARCHAR2(255) PRIMARY KEY)";
 	        createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
 	        createStatement	= "CREATE TABLE OFFERS("
 	        		+ "GAME_ID INT REFERENCES GAMES(GAME_ID),"
-	        		+ "USER_ID INT REFERENCES USERS(USER_ID),"
+	        		+ "EMAIL VARCHAR2(255) REFERENCES USERS(EMAIL),"
 	        		+ "PRICE DOUBLE,"
 	        		+ "AMOUNT INT,"
-	        		+ "PRIMARY KEY(GAME_ID,USER_ID))";
+	        		+ "PRIMARY KEY(GAME_ID,EMAIL))";
 	        createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
 	        
@@ -84,26 +83,26 @@ public class Bootstrap extends HttpServlet {
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
-        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 1', '1234', 'Tolles@Spiel.de')";
+        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 1', '1234', 'tolles@spiel.de')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 2', 'abcd', 'Geht@so.Spiel')";
+        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 2', 'abcd', 'geht@so.spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 3', '4567', 'Sehr@tolles.Spiel')";
+        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 3', '4567', 'sehr@tolles.spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 4', 'efgh', 'ein@Spiel.de')";
+        	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 4', 'efgh', 'ein@spiel.de')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
-        	insertStatement = "INSERT INTO OFFERS VALUES(2, 2, 45.20, 24)";
+        	insertStatement = "INSERT INTO OFFERS VALUES(2, 'sehr@tolles.spiel', 45.20, 24)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES(2, 1, 50, 4)";
+        	insertStatement = "INSERT INTO OFFERS VALUES(3, 'sehr@tolles.spiel', 50, 4)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES(1, 3, 5, 1)";
+        	insertStatement = "INSERT INTO OFFERS VALUES(1, 'ein@spiel.de', 5, 1)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
 		

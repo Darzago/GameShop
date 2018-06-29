@@ -3,22 +3,11 @@ package model;
 import java.io.Serializable;
 
 public class User implements Serializable{
-	private int userId;
 	private String name;
 	private String password;
 	private String email;
-	/**
-	 * @return the userId
-	 */
-	public int getUserId() {
-		return userId;
-	}
-	/**
-	 * @param userId the userId to set
-	 */
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+
+
 	/**
 	 * @return the name
 	 */
