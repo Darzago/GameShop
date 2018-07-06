@@ -69,16 +69,16 @@ public class Bootstrap extends HttpServlet {
 	        createstmt.executeUpdate();
 	        
 	        
-        	String insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAME 1', NULL, 'Tolles Spiel')";
+        	String insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GsadAME 1', NULL, 'Tolles Spiel')";
         	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAME 2', NULL, 'Geht so Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GertAME 2', NULL, 'Geht so Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAME 3', NULL, 'Sehr tolles Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAtrzME 3', NULL, 'Sehr tolles Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAME 4', NULL, 'Meh Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('ASDfAME 4', NULL, 'Meh Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	

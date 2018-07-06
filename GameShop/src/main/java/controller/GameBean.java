@@ -16,9 +16,26 @@ import model.User;
 @ManagedBean (name="gameBean")
 @SessionScoped
 public class GameBean {
-	
+	private String searchString = "";
+
 	private List<Game> gamelist = new ArrayList<Game>();
 
+	/**
+	 * @return the searchString
+	 */
+	public String getSearchString()
+	{
+		return searchString;
+	}
+
+	/**
+	 * @param searchString the searchString to set
+	 */
+	public void setSearchString(String searchString)
+	{
+		this.searchString = searchString;
+	}
+	
 	/**
 	 * @return the gameList
 	 */
@@ -40,10 +57,12 @@ public class GameBean {
 	 * live Suche
 	 * @param event
 	 */
-	public void doSomething(AjaxBehaviorEvent event)
+	public void findGamesByName(AjaxBehaviorEvent event)
 	{
-		String searchInput = (String)(((UIOutput) event.getSource()).getValue());
-		setGamelist(DAOFactory.getGameDao().findGamesByName(searchInput));
+		if(searchString != "")
+			setGamelist(DAOFactory.getGameDao().findGamesByName(searchString));
+		else
+			setGamelist(DAOFactory.getGameDao().getAllGames());
 	}
 
 
