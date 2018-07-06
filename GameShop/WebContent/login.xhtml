@@ -6,18 +6,19 @@
  xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 </h:head>
-<h:body>
-	<h1>Login</h1>
-	<h:form id="form">
-		<h:inputText id="email" value="#{userBean.user.email}">
-			<f:validator validatorId="emailValidator"  placeholder="email@example.com" />
-		</h:inputText>
-		<h:inputText id="password" value="#{userBean.user.password}"/>
-		<h:commandButton id="save" value="register" action="#{userBean.loginUser}"/>	
-		<a href="register.xhtml">Register</a>
-	</h:form>
-	
-	<ui:insert name="footer" >
-	</ui:insert>
-</h:body>
+		<ui:composition template="/templates/template.xhtml" >
+			<ui:define name="content">
+				<h:body>
+					<h1>Login</h1>
+					<h:form id="form">
+						<h:inputText id="email" value="#{userBean.user.email}">
+							<f:validator validatorId="emailValidator"  placeholder="email@example.com" />
+						</h:inputText>
+						<h:inputText id="password" value="#{userBean.user.password}"/>
+						<h:commandButton id="save" value="register" action="#{userBean.loginUser}"/>	
+						<a href="register.xhtml">Register</a>
+					</h:form>
+				</h:body>
+			</ui:define>
+		</ui:composition>
 </html>
