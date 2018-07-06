@@ -18,7 +18,7 @@ import model.User;
 public class GameBean {
 	private String searchString = "";
 
-	private List<Game> gamelist = new ArrayList<Game>();
+	private List<Game> gamelist =  DAOFactory.getGameDao().getAllGames();
 
 	/**
 	 * @return the searchString
@@ -41,7 +41,6 @@ public class GameBean {
 	 * @return the gameList
 	 */
 	public List<Game> getGamelist() {
-		gamelist = DAOFactory.getGameDao().getAllGames();
 		return gamelist;
 	}
 
@@ -57,16 +56,16 @@ public class GameBean {
 	 * live Suche
 	 * @param event
 	 */
-	public List<Game> findGamesByName(AjaxBehaviorEvent event)
+	public void findGamesByName(AjaxBehaviorEvent event)
 	{
 		System.out.println("findbyname "+searchString);
 		if(!searchString.isEmpty())
 		{
 			System.out.println(DAOFactory.getGameDao().findGamesByName(searchString)+"die Liste");
-			return(DAOFactory.getGameDao().findGamesByName(searchString));
+			setGamelist(DAOFactory.getGameDao().findGamesByName(searchString));
 		}
 		else
-			return(DAOFactory.getGameDao().getAllGames());
+			setGamelist(DAOFactory.getGameDao().getAllGames());
 	}
 
 

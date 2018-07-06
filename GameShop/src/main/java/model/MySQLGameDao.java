@@ -107,7 +107,7 @@ public class MySQLGameDao implements GameDao{
         
         try
         {
-        	PreparedStatement pstmt = con.prepareStatement("select * from Games WHERE NAME LIKE '%"+searchString+"%'");
+        	PreparedStatement pstmt = con.prepareStatement("select * from Games WHERE UPPER(NAME) LIKE UPPER('%"+searchString+"%')");
             ResultSet rs = pstmt.executeQuery();
     
             while (rs.next()) 
