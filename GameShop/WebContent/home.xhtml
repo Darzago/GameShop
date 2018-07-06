@@ -7,12 +7,12 @@
 </h:head>
 	<ui:composition template="/templates/template.xhtml">
 		<ui:define name="content">
-			<header>
-				 <h:inputText type="search" id="searchText" placeholder="Suchen..." value="#{gameBean.searchString}">
-				 	<f:ajax event="keyup" render="table" execute="@This" listener="@gameBean.findGamesByName" />
-				 </h:inputText>
-			</header>
+				
 			<h:body>
+				<h:form>
+					 <h:inputText id="searchText" value="#{gameBean.searchString}">
+					 	<f:ajax event="keyup" render="table" listener="#{gameBean.findGamesByName}" />
+					 </h:inputText>
 				<h:dataTable id="table" var="ergebnis" value="#{gameBean.gamelist}">
 					<h:column headerText="Name">
 						<h:outputText value="#{ergebnis.name}"/>
@@ -24,6 +24,7 @@
 						<a href="gameDetail.xhtml">Details</a>
 					</h:column>
 				</h:dataTable>
+				</h:form>
 			</h:body>
 		</ui:define>
 	</ui:composition>

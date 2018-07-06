@@ -33,6 +33,7 @@ public class GameBean {
 	 */
 	public void setSearchString(String searchString)
 	{
+		System.out.println("ich sage "+searchString);
 		this.searchString = searchString;
 	}
 	
@@ -41,7 +42,6 @@ public class GameBean {
 	 */
 	public List<Game> getGamelist() {
 		gamelist = DAOFactory.getGameDao().getAllGames();
-		System.out.println(gamelist.toString()+"die Liste");
 		return gamelist;
 	}
 
@@ -57,12 +57,16 @@ public class GameBean {
 	 * live Suche
 	 * @param event
 	 */
-	public void findGamesByName(AjaxBehaviorEvent event)
+	public List<Game> findGamesByName(AjaxBehaviorEvent event)
 	{
-		if(searchString != "")
-			setGamelist(DAOFactory.getGameDao().findGamesByName(searchString));
+		System.out.println("findbyname "+searchString);
+		if(!searchString.isEmpty())
+		{
+			System.out.println(DAOFactory.getGameDao().findGamesByName(searchString)+"die Liste");
+			return(DAOFactory.getGameDao().findGamesByName(searchString));
+		}
 		else
-			setGamelist(DAOFactory.getGameDao().getAllGames());
+			return(DAOFactory.getGameDao().getAllGames());
 	}
 
 
