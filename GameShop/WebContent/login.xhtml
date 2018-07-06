@@ -2,7 +2,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
  xmlns:f="http://java.sun.com/jsf/core"
- xmlns:h="http://java.sun.com/jsf/html">
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 </h:head>
 <h:body>
@@ -15,5 +16,8 @@
 		<h:commandButton id="save" value="register" action="#{userBean.loginUser}"/>	
 		<a href="register.xhtml">Register</a>
 	</h:form>
+	
+	<ui:insert name="footer" >
+	</ui:insert>
 </h:body>
 </html>
