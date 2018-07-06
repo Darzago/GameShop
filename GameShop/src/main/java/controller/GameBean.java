@@ -6,6 +6,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIOutput;
+import javax.faces.event.AjaxBehaviorEvent;
 
 import model.DAOFactory;
 import model.Game;
@@ -29,9 +31,21 @@ public class GameBean {
 	/**
 	 * @param gameList the gameList to set
 	 */
-	public void setGamelist(List<Game> gameList) {
+	public void setGamelist(List<Game> gameList) 
+	{
 		this.gamelist = gameList;
 	}
+	
+	/**
+	 * live Suche
+	 * @param event
+	 */
+	public void doSomething(AjaxBehaviorEvent event)
+	{
+		String searchInput = (String)(((UIOutput) event.getSource()).getValue());
+		setGamelist(DAOFactory.getGameDao().findGamesByName(searchInput));
+	}
+
 
 
 }

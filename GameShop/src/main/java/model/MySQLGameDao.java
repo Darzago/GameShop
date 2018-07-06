@@ -99,5 +99,34 @@ public class MySQLGameDao implements GameDao{
 		}
 	
 	}
+	
+	@Override
+	public List<Game> findGamesByName(String searchString) 
+	{
+        List<Game> tempList = new ArrayList<Game>();
+        
+        try
+        {
+        	PreparedStatement pstmt = con.prepareStatement("select * from Games WHERE NAME LIKE '%"+searchString+"%'");
+            ResultSet rs = pstmt.executeQuery();
+    
+            while (rs.next()) 
+            {
+            	Game newGame = new Game();
+            	newGame.setName(rs.getString("NAME"));
+            	//TODO
+            	newGame.setImage(null);
+            	newGame.setDescription(rs.getString("DESCRIPTION"));
+            	tempList.add(newGame);
+            }
+            
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
+        return tempList;
+	}
 
 }
