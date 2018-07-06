@@ -2,12 +2,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
  xmlns:f="http://java.sun.com/jsf/core"
- xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:ui="http://java.sun.com/jsf/facelets">
 </h:head>
-<h:body>
-	<h1>GameDetail</h1>
-	
-	<a href="buyGame.xhtml">Buy Game</a>
-</h:body>
+		<ui:composition template="/templates/template.xhtml" >
+		
+			<ui:define name="content">
+				<h:body>
+					<h1>GameDetail</h1>
+					<a href="buyGame.xhtml">Buy Game</a>
+				</h:body>
+			</ui:define>
+			
+		</ui:composition>
+		
+
 </html>

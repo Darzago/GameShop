@@ -3,9 +3,21 @@
  xmlns:f="http://java.sun.com/jsf/core"
  xmlns:h="http://java.sun.com/jsf/html"
  xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+ 
 <body>
+	<ui:insert name="navigation">
+		<ul class="navigation">
+			<li><a href="login.xhtml">Login</a></li>
+			<li><a href="createOffer.xhtml">Create Offer</a></li>
+			<li><a href="myOffers.xhtml">My Offers</a></li>
+		</ul>
+	</ui:insert>
+
 	<ui:insert name="content">
     </ui:insert>
+    
     <ui:insert name="footer">
     	<footer>
         	<h2>Footzar</h2>
