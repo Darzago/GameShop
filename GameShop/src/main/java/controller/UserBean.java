@@ -13,7 +13,30 @@ import model.UserDao;
 @ManagedBean (name="userBean")
 @SessionScoped
 public class UserBean {
+	
 	private User user = new User();
+	
+	private boolean loggedIn = false;
+
+	
+	public void logOut()
+	{
+		this.loggedIn = false;
+	}
+	
+	/**
+	 * @return the loggedIn
+	 */
+	public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	/**
+	 * @param loggedIn the loggedIn to set
+	 */
+	public void setLoggedIn(boolean loggedIn) {
+		this.loggedIn = loggedIn;
+	}
 
 	/**
 	 * @return the user
@@ -40,9 +63,15 @@ public class UserBean {
 	public String loginUser()  throws SQLException
 	{
 		if(DAOFactory.getUserDao().checkUserPw(user))
+		{
+			this.loggedIn = true;
 			return "Success";
-		else 
+		}
+		else
+		{
+			this.loggedIn = false;
 			return "Failed";
+		}
 	}
 	
 	

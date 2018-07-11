@@ -95,13 +95,13 @@ public class Bootstrap extends HttpServlet {
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
-        	insertStatement = "INSERT INTO OFFERS VALUES('GAME 4', 'sehr@tolles.spiel', 45.20, 24)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('GAtrzME 3', 'sehr@tolles.spiel', 45.20, 24)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES('GAME 3', 'sehr@tolles.spiel', 50, 4)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('GsadAME 1', 'sehr@tolles.spiel', 50, 4)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES('GAME 4', 'ein@spiel.de', 5, 1)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('ASDfAME 4', 'ein@spiel.de', 5, 1)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
 		
