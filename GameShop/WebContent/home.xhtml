@@ -3,29 +3,32 @@
  xmlns:f="http://java.sun.com/jsf/core"
  xmlns:h="http://java.sun.com/jsf/html"
  xmlns:ui="http://java.sun.com/jsf/facelets">
+ <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <h:head>
 </h:head>
 	<ui:composition template="/templates/template.xhtml">
 		<ui:define name="content">
 				
-			<h:body>
+			<div class="contentArea">
 				<h:form>
+				<div id="searchDiv">
 					 <h:inputText id="searchText" value="#{gameBean.searchString}">
 					 	<f:ajax event="keyup" render="table" listener="#{gameBean.findGamesByName}" />
 					 </h:inputText>
-				<h:dataTable id="table" var="ergebnis" value="#{gameBean.gamelist}">
-						<h:column id="gameNameInTable" headerText="Name">
-							<h:outputText value="#{ergebnis.name}"/>
-						</h:column>
-						<h:column id="gameDescriptionInTable" headerText="Description">
-							<h:outputText value="#{ergebnis.description}"/>
-						</h:column>
-						<h:column id="gameDetailsInTable" headerText="Details">
-							<a href="gameDetail.xhtml">Details</a>
-						</h:column>
-				</h:dataTable>
+				</div>
+				
+				<div id="gameTileCollection">
+					<ui:repeat id="table" var="ergebnis" value="#{gameBean.gamelist}" varStatus="status">   
+					    <a href="gameDetail.xhtml">
+						    <div class = "gameTile" style="background-image: url(background.jpg);
+						    							   background-size: cover;">
+						        <div class = "gameName"><h2>#{ergebnis.name}</h2></div>
+						   </div>	
+					   </a>        
+				    </ui:repeat>
+			    </div>
 				</h:form>
-			</h:body>
+			</div>
 		</ui:define>
 	</ui:composition>
 </html>
