@@ -1,7 +1,16 @@
 @CHARSET "ISO-8859-1";
 
-body
-{
+@import url('https://fonts.googleapis.com/css?family=Cabin'); 
+ 
+@font-face  
+{  
+    font-family: 'Cabin', sans-serif; 
+    src: url('https://fonts.googleapis.com/css?family=Cabin'); 
+} 
+ 
+body 
+{ 
+    font-family: Cabin; 
 	    margin-left: 0em;
         margin-right: 0em;
         margin-top: 0em;
