@@ -9,7 +9,8 @@
 <body>
 	<ui:insert name="navigation">
 		<ul class="navigation">
-			<li><a href="login.xhtml">Login</a></li>
+			<li><a href="login.xhtml"><h:outputText value = "Login" rendered="#{!userBean.loggedIn}"/></a></li>
+			<li><a href="home.xhtml"><h:outputText value = "Logout" rendered="#{userBean.loggedIn}"/></a></li>
 			<li><a href="createOffer.xhtml">Create Offer</a></li>
 			<li><a href="myOffers.xhtml">My Offers</a></li>
 		</ul>

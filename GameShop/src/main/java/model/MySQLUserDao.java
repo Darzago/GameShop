@@ -47,8 +47,12 @@ Connection con;
         ResultSet rs = pstmt.executeQuery();
 		if(rs.next())
 		{
-			if(rs.getString(0)==user.getPassword())
+			System.out.println(rs.getString(1) + user.getPassword());
+			if(rs.getString(1).equals(user.getPassword()))
+			{
+				
 				return true;
+			}
 			else 
 				return false;
 		}
