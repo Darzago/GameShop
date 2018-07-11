@@ -29,7 +29,7 @@ public class MySQLGameDao implements GameDao{
         
         try
         {
-        	PreparedStatement pstmt = con.prepareStatement("select * from Games");
+        	PreparedStatement pstmt = con.prepareStatement("SELECT * FROM GAMES");
             ResultSet rs = pstmt.executeQuery();
     
             while (rs.next()) 
