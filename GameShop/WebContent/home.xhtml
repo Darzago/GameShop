@@ -14,15 +14,15 @@
 					 	<f:ajax event="keyup" render="table" listener="#{gameBean.findGamesByName}" />
 					 </h:inputText>
 				<h:dataTable id="table" var="ergebnis" value="#{gameBean.gamelist}">
-					<h:column headerText="Name">
-						<h:outputText value="#{ergebnis.name}"/>
-					</h:column>
-					<h:column headerText="Description">
-						<h:outputText value="#{ergebnis.description}"/>
-					</h:column>
-					<h:column headerText="Details">
-						<a href="gameDetail.xhtml">Details</a>
-					</h:column>
+						<h:column id="gameNameInTable" headerText="Name">
+							<h:outputText value="#{ergebnis.name}"/>
+						</h:column>
+						<h:column id="gameDescriptionInTable" headerText="Description">
+							<h:outputText value="#{ergebnis.description}"/>
+						</h:column>
+						<h:column id="gameDetailsInTable" headerText="Details">
+							<a href="gameDetail.xhtml">Details</a>
+						</h:column>
 				</h:dataTable>
 				</h:form>
 			</h:body>
