@@ -28,7 +28,7 @@ body
     width: 100%;
     height: 100%;
 	background-image:url("background.jpg");
-    box-shadow: inset 0 0 0 100em rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 0 100em rgba(0,0,0,0.4);
     z-index: -1;
 }
 a
@@ -37,6 +37,7 @@ a
     color: inherit;
 }
 
+/*
 .navigation
 {
 	display: flex;
@@ -59,7 +60,6 @@ li
     display: block;
     text-decoration: none;
 }
-
 a:hover
 {
 	backgroung-color : white;
@@ -69,20 +69,44 @@ ul
 {
 	list-style-type: none;
 }
+*/
 
-#Table
+
+.topnav 
 {
-	background-color: rgba(255,255,255,0.9);
+	/*position: fixed;*/
+	width: 100%;
+	overflow: hidden;
+	display: block;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-top: 0em;
 }
-#gameNameInTable
+#homeLink
+{
+	float: left!important;
+}
+.topnav a 
+{
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover 
+{
+  background-color: #ddd;
+  color: black;
+}
+
+#gameWindow
 {
 	display: block;
-}
-#gameDescriptionInTable
-{
-	
-}
-#gameDetailsInTable
-{
-	
+	background-color: black;
+	margin: 1em;
 }
