@@ -19,7 +19,7 @@
 					
 					<a href="buyGame.xhtml">Buy Game</a>
 					
-					<h:dataTable var="ergebnis" value="#{offerListBean.getOffersByQuery()}">
+					<h:dataTable var="ergebnis" value="#{offerListBean.getOffersByGame(gameDetailsBean.game)}">
 						<h:column>
 							<h:outputText value="#{ergebnis.name}"/>
 						</h:column>

@@ -19,8 +19,9 @@ public class OfferListBean
 	
 	private List<Offer> offerlist = new ArrayList<Offer>();
 	
-	public List<Offer> getOffersByQuery()
+	public List<Offer> getOffersByGame(Game queryGame)
 	{
+		/*
 		Game queryGame = new Game();
 		String gameId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("gameId");
 		List<Game> tempList = DAOFactory.getGameDao().findGamesByName(gameId);
@@ -29,7 +30,7 @@ public class OfferListBean
 			queryGame = tempGame;
 			break;
 		}
-		
+		*/
 		return DAOFactory.getOfferDao().getOffersForGame(queryGame);
 	}
 	
