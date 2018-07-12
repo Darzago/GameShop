@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIOutput;
+import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 
 import model.DAOFactory;
@@ -16,6 +17,7 @@ import model.User;
 @ManagedBean (name="gameBean")
 @SessionScoped
 public class GameBean {
+	
 	private String searchString = "";
 
 	private List<Game> gamelist =  DAOFactory.getGameDao().getAllGames();

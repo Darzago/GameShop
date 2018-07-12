@@ -28,11 +28,11 @@ public class MySQLOfferDao implements OfferDao{
 	@Override
 	public List<Offer> getOffersForGame(Game game) {
 
-		//TODO Bis jetzt noch nicht ans game gebundene 
         List<Offer> tempList = new ArrayList<Offer>();
         try
         {
-        	PreparedStatement pstmt = con.prepareStatement("SELECT * FROM OFFERS");
+        	PreparedStatement pstmt = con.prepareStatement("SELECT * FROM OFFERS WHERE Name = ?");
+        	pstmt.setString(1, game.getName());
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) 
             {
@@ -48,7 +48,6 @@ public class MySQLOfferDao implements OfferDao{
         }
         catch(SQLException e)
         {
-            //System.out.println(e.getStackTrace()+ "whas ist geschein!!!");
             System.out.println(e.getMessage()+ "whas ist geschein!!!");
         }
         
