@@ -12,7 +12,7 @@
 					<h1>Create Offer</h1>
 					
 					<h:form id="form">
-						<input type="text" id="name" list="dataList"/>
+						<input type="text" id="name" list="dataList" autocomplete="off"/>
 						<datalist id="dataList">
 							<ui:repeat id="table" var="ergebnis" value="#{gameBean.gamelist}" varStatus="status">   
 								<OPTION value="#{ergebnis.name}">#{ergebnis.name}</OPTION>
