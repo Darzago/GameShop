@@ -1,21 +1,17 @@
 package controller;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.component.UIOutput;
-import javax.faces.context.FacesContext;
+import javax.faces.bean.RequestScoped;
 import javax.faces.event.AjaxBehaviorEvent;
 
 import model.DAOFactory;
 import model.Game;
-import model.User;
 
 @ManagedBean (name="gameBean")
-@SessionScoped
+@RequestScoped
 public class GameBean {
 	
 	private String searchString = "";
