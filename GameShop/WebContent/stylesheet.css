@@ -192,3 +192,12 @@ footer p
 {
 	margin: 0;
 }
+
+.active
+{
+	display: block !important;
+}
+.deactive
+{
+	display: none !important;
+}

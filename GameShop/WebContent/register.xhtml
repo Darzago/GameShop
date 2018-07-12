@@ -11,14 +11,17 @@
 				<div class="contentArea">
 					<h1>Register</h1>
 					<h:form id="form">
+						<label for="name">Username</label>
 						<h:inputText id="name" value="#{userBean.user.name}"/>
 						<p/>
+						<label for="password">Password</label>
 						<h:inputText id="password" value="#{userBean.user.password}"/>
 						<p/>
+						<label for="email">E-mail</label>
 						<h:inputText id="email" value="#{userBean.user.email}">
 							<f:validator validatorId="emailValidator"  />
 						</h:inputText>
-						<h:message for="email">
+						<h:message for="email"/>
 						<p/>
 						<h:commandButton id="save" value="register" action="#{userBean.registerUser}"/>
 					</h:form> 

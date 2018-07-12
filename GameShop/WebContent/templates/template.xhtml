@@ -14,12 +14,21 @@
 		  <div class="dropdown">
 			  <a id="dropdownLink">My User</a>
 			  <div class="dropdown-content">
-			      <a href="login.xhtml">Login</a>
-				  <a href="createOffer.xhtml">Create Offer</a>
-				  <a href="myOffers.xhtml">My Offers</a>
+			      <a class="active" href="login.xhtml">Login</a>
+			      <a class="deactive" onclick="afterLogin" href="login.xhtml">Logout</a>
+				  <a class="deactive" href="createOffer.xhtml">Create Offer</a>
+				  <a class="deactive" href="myOffers.xhtml">My Offers</a>
 			  </div>
 			</div>
 		</div>
+		<h:panelGroup id="afterLogin">
+		    <h:outputScript>
+		        function afterLogin() 
+		        {    
+		            alert("#{statusBean.size}");
+		        }
+		    </h:outputScript>
+		</h:panelGroup>
 	</ui:insert>
 
 	<ui:insert name="content">

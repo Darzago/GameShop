@@ -23,7 +23,6 @@ public class UserBean {
 	{
 		this.loggedIn = false;
 	}
-	
 	/**
 	 * @return the loggedIn
 	 */
