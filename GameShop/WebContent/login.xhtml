@@ -16,11 +16,13 @@
 							<f:validator validatorId="emailValidator"  placeholder="email@example.com" />
 							<f:ajax render="errorMessageEmail" event="keyup"/>
 						</h:inputText>
+						<p/>
 						
 						<h:message id="errorMessageEmail" for="email"/>
 						
 						<h:inputText id="password" value="#{userBean.user.password}"/>
-						<h:commandButton id="save" value="register" action="#{userBean.loginUser}"/>	
+						<p/>
+						<h:commandButton id="save" value="Login" action="#{userBean.loginUser}"/>	
 						<a href="register.xhtml">Register</a>
 						
 					</h:form>

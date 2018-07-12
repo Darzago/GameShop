@@ -13,11 +13,14 @@
 					<h1>Register</h1>
 					<h:form id="form">
 						<h:inputText id="name" value="#{userBean.user.name}"/>
+						<p/>
 						<h:inputText id="password" value="#{userBean.user.password}"/>
+						<p/>
 						<h:inputText id="email" value="#{userBean.user.email}">
 							<f:validator validatorId="emailValidator"  />
 						</h:inputText>
 						<h:message for="email">
+						<p/>
 						<h:commandButton id="save" value="register" action="#{userBean.registerUser}"/>
 					</h:form> 
 				</h:body>
