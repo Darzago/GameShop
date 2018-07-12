@@ -17,9 +17,9 @@
 					#{gameDetailsBean.game.name}
 					<p/>
 					#{gameDetailsBean.game.description}
+					<p/>
 					
-					<a href="buyGame.xhtml">Buy Game</a>
-					
+					<h2>Offers</h2>
 					<h:dataTable var="ergebnis" value="#{offerListBean.getOffersByGame(gameDetailsBean.game)}">
 						<h:column>
 							<h:outputText value="#{ergebnis.name}"/>
@@ -33,6 +33,10 @@
 						<h:column>
 							<h:outputText value="#{ergebnis.amount}"/>
 						</h:column>
+						<h:column>
+							<h:commandButton value="Buy" action="#{offerListBean.buyGameOffer(ergebnis)}"/>
+						</h:column>
+						
 					</h:dataTable>
 				</div>	
 			</ui:define>

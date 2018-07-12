@@ -21,17 +21,24 @@ public class OfferListBean
 	
 	public List<Offer> getOffersByGame(Game queryGame)
 	{
-		/*
-		Game queryGame = new Game();
-		String gameId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("gameId");
-		List<Game> tempList = DAOFactory.getGameDao().findGamesByName(gameId);
-		for(Game tempGame : tempList)
-		{
-			queryGame = tempGame;
-			break;
-		}
-		*/
 		return DAOFactory.getOfferDao().getOffersForGame(queryGame);
+	}
+	
+	public String buyGameOffer(Offer offer)
+	{
+		System.out.println("Amount: " + offer.getAmount());
+		if(offer.getAmount() > 1)
+		{
+			offer.setAmount(offer.getAmount() - 1);
+			DAOFactory.getOfferDao().updateOffer(offer);
+			return "Success";
+		}
+		else
+		{
+			DAOFactory.getOfferDao().removeOffer(offer);
+			return "Success";
+		}
+		
 	}
 	
 	/**
