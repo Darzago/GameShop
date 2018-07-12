@@ -11,8 +11,29 @@
 		
 			<ui:define name="content">
 				<h:body>
-					<h1>GameDetail</h1>
+					Hier ganz tolles Bild
+					<p/>
+					#{gameDetailsBean.game.name}
+					<p/>
+					#{gameDetailsBean.game.description}
+					
 					<a href="buyGame.xhtml">Buy Game</a>
+					
+					<h:dataTable var="ergebnis" value="#{offerListBean.getOffersByQuery()}">
+						<h:column>
+							<h:outputText value="#{ergebnis.name}"/>
+						</h:column>
+						<h:column>
+							<h:outputText value="#{ergebnis.email}"/>
+						</h:column>
+						<h:column>
+							<h:outputText value="#{ergebnis.price}"/>
+						</h:column>
+						<h:column>
+							<h:outputText value="#{ergebnis.amount}"/>
+						</h:column>
+					</h:dataTable>
+					
 				</h:body>
 			</ui:define>
 			
