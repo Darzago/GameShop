@@ -12,7 +12,6 @@
 			<ui:define name="content">
 				<div class="contentArea">
 					<h1>GameDetail</h1>
-				<h:body>
 					Hier ganz tolles Bild
 					<p/>
 					#{gameDetailsBean.game.name}
@@ -20,7 +19,6 @@
 					#{gameDetailsBean.game.description}
 					
 					<a href="buyGame.xhtml">Buy Game</a>
-				</div>
 					
 					<h:dataTable var="ergebnis" value="#{offerListBean.getOffersByGame(gameDetailsBean.game)}">
 						<h:column>
@@ -36,8 +34,7 @@
 							<h:outputText value="#{ergebnis.amount}"/>
 						</h:column>
 					</h:dataTable>
-					
-				</h:body>
+				</div>	
 			</ui:define>
 			
 		</ui:composition>
