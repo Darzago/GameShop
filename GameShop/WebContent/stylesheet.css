@@ -8,6 +8,11 @@
     src: url('https://fonts.googleapis.com/css?family=Cabin'); 
 } 
  
+ h1
+ {
+ 	margin-top: 0;
+ 	padding-top: 1em;
+ }
 body 
 { 
    	    font-family: Cabin; 
@@ -109,6 +114,7 @@ ul
 
 #searchDiv
 {
+	position: fixed;
 	background-color: rgba(0,0,0,0.85);
 	margin-top:30px;
 	padding: 0em;
@@ -122,6 +128,7 @@ ul
     justify-content: center;
     overflow: hidden;
     flex-wrap: wrap;
+    padding-top: 3em;
 }
 .gameTile
 {
