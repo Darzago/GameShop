@@ -9,7 +9,7 @@
 		<ui:composition template="/templates/template.xhtml" >
 		
 			<ui:define name="content">
-				<h:body>
+				<div class="contentArea">
 					<h1>Login</h1>
 					<h:form id="form">
 						<h:inputText id="email" value="#{userBean.user.email}">
@@ -26,7 +26,7 @@
 						<a href="register.xhtml">Register</a>
 						
 					</h:form>
-				</h:body>
+				</div>
 			</ui:define>
 			
 		</ui:composition>

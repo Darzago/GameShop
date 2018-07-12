@@ -11,9 +11,14 @@
 	<ui:insert name="navigation">
 		<div class="topnav" id="myTopnav">
 		  <a id="homeLink" href="home.xhtml">Home</a>
-		  <a href="login.xhtml">Login</a>
-		  <a href="createOffer.xhtml">Create Offer</a>
-		  <a href="myOffers.xhtml">My Offers</a>
+		  <div class="dropdown">
+			  <a id="dropdownLink">My User</a>
+			  <div class="dropdown-content">
+			      <a href="login.xhtml">Login</a>
+				  <a href="createOffer.xhtml">Create Offer</a>
+				  <a href="myOffers.xhtml">My Offers</a>
+			  </div>
+			</div>
 		</div>
 	</ui:insert>
 
