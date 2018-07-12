@@ -40,7 +40,7 @@ public class MySQLOfferDao implements OfferDao{
             	newOffer.setName(rs.getString("Name"));
             	newOffer.setEmail(rs.getString("EMAIL"));
             	newOffer.setPrice(rs.getDouble("PRICE"));
-            	newOffer.setPrice(rs.getInt("AMOUNT"));
+            	newOffer.setAmount(rs.getInt("AMOUNT"));
                 tempList.add(newOffer);
                 System.out.println("Offer added to returning offer List");
             }
