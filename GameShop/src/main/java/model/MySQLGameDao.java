@@ -37,7 +37,7 @@ public class MySQLGameDao implements GameDao{
             	Game newGame = new Game();
             	newGame.setName(rs.getString("NAME"));
             	//TODO
-            	newGame.setImage(null);
+            	newGame.setImageUrl(rs.getString("PICTUREURL"));
             	newGame.setDescription(rs.getString("DESCRIPTION"));
             	tempList.add(newGame);
             }
@@ -51,36 +51,6 @@ public class MySQLGameDao implements GameDao{
         return tempList;
 	}
 
-	@Override
-	public void addGame(Game game) {
-		try 
-		{
-			//TODO Pictures
-			PreparedStatement pstmt = con.prepareStatement("INSERT INTO GAMES(NAME, DESCRIPTION) VALUES(?,?,?)");
-			pstmt.setString(1, game.getName());
-			pstmt.setString(2, game.getDescription());
-			pstmt.executeUpdate();
-		}
-		catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	@Override
-	public void removeGame(Game game) {
-		try 
-		{
-			PreparedStatement pstmt = con.prepareStatement("DELETE FROM Games Name = ?");
-			pstmt.setString(1, game.getName());
-			pstmt.executeUpdate();
-		}
-		catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
 
 	@Override
 	public void updateGame(Game game) {
@@ -115,7 +85,7 @@ public class MySQLGameDao implements GameDao{
             	Game newGame = new Game();
             	newGame.setName(rs.getString("NAME"));
             	//TODO
-            	newGame.setImage(null);
+            	newGame.setImageUrl(rs.getString("PICTUREURL"));
             	newGame.setDescription(rs.getString("DESCRIPTION"));
             	tempList.add(newGame);
             }
