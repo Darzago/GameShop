@@ -9,16 +9,15 @@
 <h:body>
 
 	<ui:insert name="navigation">
-		<h:outputScript name="help.js" target="head"/>
 		<div class="topnav" id="myTopnav">
 		  <a id="homeLink" href="home.xhtml">Home</a>
 		  <div class="dropdown">
 			  <a id="dropdownLink">My User</a>
 			  <div class="dropdown-content">
-			      <a class="deactive" href="login.xhtml">Login</a>
-			      <a class="active" onclick="logout()" href="login.xhtml">Logout</a>
-				  <a class="active" href="createOffer.xhtml">Create Offer</a>
-				  <a class="active" href="myOffers.xhtml">My Offers</a>
+			      <h:link class="#{userBean.isLoggedIn()?'deactive' : 'active'}" outcome="login.xhtml">Login</h:link>
+			      <h:link class="#{userBean.isLoggedIn()?'active' : 'deactive'}" outcome="home.xhtml">Logout</h:link>
+				  <h:link class="#{userBean.isLoggedIn()?'active' : 'deactive'}" outcome="createOffer.xhtml">Create Offer</h:link>
+				  <h:link class="#{userBean.isLoggedIn()?'active' : 'deactive'}" outcome="myOffers.xhtml">My Offers</h:link>
 			  </div>
 			</div>
 		</div>

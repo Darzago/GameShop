@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import model.DAOFactory;
 import model.User;
@@ -19,9 +20,10 @@ public class UserBean {
 	private boolean loggedIn = false;
 
 	
-	public void logOut()
+	public String logOut()
 	{
-		this.loggedIn = false;
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+		return "/home?faces-redirect=true";
 	}
 	/**
 	 * @return the loggedIn
