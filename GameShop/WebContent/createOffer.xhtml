@@ -31,7 +31,7 @@
 							
 						</h:inputText>
 						<p/>
-						<h:commandButton id="save" value="Create" action="#{userBean.createOffer(#{userBean.email})}"/>
+						<h:commandButton id="save" value="Create" action="#{offerBean.createOffer(userBean.user.email)}"/>
 						<h:commandButton value="Cancel" action="./createOffer.xhtml" immediate="true"/>
 					</h:form> 
 				
