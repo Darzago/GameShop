@@ -12,7 +12,7 @@
 			<ui:define name="content">
 				<div class="contentArea">
 					<h1>My Offers</h1>
-					<h:dataTable var="ergebnis" value="#{offerListBean.offerlist}">
+					<h:dataTable var="ergebnis" value="#{offerListBean.getOffersByUser(userBean.user)}">
 						<h:column>
 							<h:outputText value="#{ergebnis.name}"/>
 						</h:column>

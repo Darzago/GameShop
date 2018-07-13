@@ -101,6 +101,9 @@ public class Bootstrap extends HttpServlet {
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
+        	insertStatement = "INSERT INTO OFFERS VALUES('Oxenfree', 'tolles@spiel.de', 45.20, 24)";
+       	 	insertstmt = con.prepareStatement(insertStatement);
+       	 	insertstmt.executeUpdate();
         	insertStatement = "INSERT INTO OFFERS VALUES('Assasins Creed: Origins', 'sehr@tolles.spiel', 45.20, 24)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();

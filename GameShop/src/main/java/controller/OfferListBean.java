@@ -27,6 +27,7 @@ public class OfferListBean
 	
 	public List<Offer> getOffersByUser(User user)
 	{
+		System.out.println(user);
 		return DAOFactory.getOfferDao().getOffersForUser(user);
 	}
 	
