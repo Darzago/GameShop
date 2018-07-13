@@ -20,11 +20,6 @@
 								<OPTION value="#{ergebnis.name}">#{ergebnis.name}</OPTION>
 							</ui:repeat>
 						</datalist>
-						<p/>
-						<label for="email">Email</label>
-						<br/>
-						<h:inputText id="email" value="#{offerBean.offer.email}"/>
-						<p/>
 						<label for="price">Price</label>
 						<br/>
 						<h:inputText id="price" value="#{offerBean.offer.price}" />
@@ -36,7 +31,7 @@
 							
 						</h:inputText>
 						<p/>
-						<h:commandButton id="save" value="Create" action="./home.xhtml"/>
+						<h:commandButton id="save" value="Create" action="#{userBean.createOffer(#{userBean.email})}"/>
 						<h:commandButton value="Cancel" action="./createOffer.xhtml" immediate="true"/>
 					</h:form> 
 				

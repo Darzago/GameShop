@@ -3,6 +3,7 @@ package controller;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import model.DAOFactory;
 import model.Offer;
 
 @ManagedBean (name="offerBean")
@@ -20,9 +21,21 @@ public class OfferBean {
 	/**
 	 * @param offer the offer to set
 	 */
-	public void setOffer(Offer offer) {
+	public void setOffer(Offer offer) 
+	{
 		this.offer = offer;
 	}
 	
+	public String createOffer(String email)
+	{
+		this.offer.setEmail(email);
+		if(this.offer.getEmail() != null && this.offer.getName() != null &&
+		   this.offer.getAmount()!= 0)
+		{
+			DAOFactory.getOfferDao().addOffer(this.offer);
+			return "Success";
+		}
+		return "Failed";
+	}
 	
 }

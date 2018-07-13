@@ -8,8 +8,8 @@ import javax.faces.bean.ManagedBean;
 public class Offer implements Serializable{
 	private String name;
 	private String email;
-	private double price;
-	private int amount;
+	private double price=0;
+	private int amount=0;
 	
 	public String getName() 
 	{

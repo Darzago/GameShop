@@ -87,7 +87,15 @@ public class MySQLOfferDao implements OfferDao{
 	public void addOffer(Offer offer) {
 		try 
 		{
-			PreparedStatement pstmt = con.prepareStatement("INSERT INTO Offers(Name, Email, Price, Amount) VALUES(?,?,?,?)");
+			PreparedStatement pstmt = con.prepareStatement("SELECT * FROM OFFERS WHERE Name = ? AND Email = ?");
+        	pstmt.setString(1, offer.getName());
+        	pstmt.setString(2, offer.getEmail());
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next() )
+            {
+            	this.updateOffer(offer);
+            }
+			pstmt = con.prepareStatement("INSERT INTO Offers(Name, Email, Price, Amount) VALUES(?,?,?,?)");
 			pstmt.setString(1, offer.getName());
 			pstmt.setString(2, offer.getEmail());
 			pstmt.setDouble(3, offer.getPrice());
