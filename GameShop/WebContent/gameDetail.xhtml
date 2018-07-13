@@ -4,38 +4,38 @@
  xmlns:f="http://java.sun.com/jsf/core"
  xmlns:h="http://java.sun.com/jsf/html"
  xmlns:ui="http://java.sun.com/jsf/facelets">
+ <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 <h:head>
 
 </h:head>
 		<ui:composition template="/templates/template.xhtml" >
 		
-			<ui:define name="content">
-				<div class="contentArea">
-					<h1>GameDetail</h1>
+			<ui:define id="detailContent" name="content">
+				<div id="detailViewDiv" class="contentArea">
+					
 					<img src="#{gameDetailsBean.game.imageUrl}" />
-					Hier ganz tolles Bild
 					<p/>
-					#{gameDetailsBean.game.name}
+					<h2>#{gameDetailsBean.game.name}</h2>
 					<p/>
 					#{gameDetailsBean.game.description}
 					<p/>
 					
 					<h2>Offers</h2>
-					<h:dataTable var="ergebnis" value="#{offerListBean.getOffersByGame(gameDetailsBean.game)}">
+					<h:dataTable id="sellerTable" var="ergebnis" value="#{offerListBean.getOffersByGame(gameDetailsBean.game)}">
 						<h:column>
-							<h:outputText value="#{ergebnis.name}"/>
-						</h:column>
-						<h:column>
+							<f:facet name="header">Seller</f:facet>
 							<h:outputText value="#{ergebnis.email}"/>
 						</h:column>
 						<h:column>
+							<f:facet name="header">Price</f:facet>
 							<h:outputText value="#{ergebnis.price}"/>
 						</h:column>
 						<h:column>
+							<f:facet name="header">Ammount</f:facet>
 							<h:outputText value="#{ergebnis.amount}"/>
 						</h:column>
 						<h:column>
-							<h:button value="Buy" action="#{offerListBean.buyGameOffer(ergebnis)}"/>
+							<!-- <h:button value="Buy" action="#{offerListBean.buyGameOffer(ergebnis)}"/> -->
 							<h:commandButton id="buy" value="Buy" action="#{offerListBean.buyGameOffer(ergebnis)}"/>
 						</h:column>
 						
