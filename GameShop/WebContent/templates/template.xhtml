@@ -15,13 +15,14 @@
 			  <a id="dropdownLink">My User</a>
 			  <div class="dropdown-content">
 			      <h:link class="#{userBean.isLoggedIn()?'deactive' : 'active'}" outcome="login.xhtml">Login</h:link>
-			      <h:link class="#{userBean.isLoggedIn()?'active' : 'deactive'}" outcome="home.xhtml">Logout</h:link>
+			      <h:form>
+			      <h:commandLink class="#{userBean.isLoggedIn()?'active' : 'deactive'}" outcome="home.xhtml" action="#{userBean.logout}">Logout</h:commandLink>
+				  </h:form>
 				  <h:link class="#{userBean.isLoggedIn()?'active' : 'deactive'}" outcome="createOffer.xhtml">Create Offer</h:link>
 				  <h:link class="#{userBean.isLoggedIn()?'active' : 'deactive'}" outcome="myOffers.xhtml">My Offers</h:link>
 			  </div>
 			</div>
 		</div>
-		<h:commandButton id="logoutAction" action="#{userBean.logout()}" value="click" style="display: none;" />
 	</ui:insert>
 
 	<ui:insert name="content">

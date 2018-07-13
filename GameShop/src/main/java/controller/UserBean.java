@@ -20,10 +20,10 @@ public class UserBean {
 	private boolean loggedIn = false;
 
 	
-	public String logOut()
+	public void logout()
 	{
-		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		return "/home?faces-redirect=true";
+		loggedIn = false;
+		System.out.println(loggedIn);
 	}
 	/**
 	 * @return the loggedIn
