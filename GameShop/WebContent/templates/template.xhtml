@@ -5,18 +5,18 @@
  xmlns:ui="http://java.sun.com/jsf/facelets">
  
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
- 
-<body>
+<h:head></h:head>
+<h:body>
 
 	<ui:insert name="navigation">
-		<h:outputScript name = "help.js"/>
+		<h:outputScript name="help.js" target="head"/>
 		<div class="topnav" id="myTopnav">
 		  <a id="homeLink" href="home.xhtml">Home</a>
 		  <div class="dropdown">
 			  <a id="dropdownLink">My User</a>
 			  <div class="dropdown-content">
 			      <a class="active" href="login.xhtml">Login</a>
-			      <a class="active" onclick="logout" href="login.xhtml">Logout</a>
+			      <a class="active" onclick="logout()" href="login.xhtml">Logout</a>
 				  <a class="deactive" href="createOffer.xhtml">Create Offer</a>
 				  <a class="deactive" href="myOffers.xhtml">My Offers</a>
 			  </div>
@@ -35,5 +35,5 @@
     </ui:insert>
 <div id="layer">
  </div>
-</body>
+</h:body>
 </html>
