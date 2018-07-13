@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
  xmlns:f="http://java.sun.com/jsf/core"
  xmlns:h="http://java.sun.com/jsf/html"
- xmlns:ui="http://java.sun.com/jsf/facelets">
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 </h:head>
 		<ui:composition template="/templates/template.xhtml" >
@@ -14,12 +15,13 @@
 					<h:form id="form">
 						<label for="name">Game</label>
 						<br/>
-						<input type="text" id="name" list="dataList" autocomplete="off"/>
+						<h:inputText type="text" id="name" pt:list="dataList" value="#{offerBean.offer.name}" autocomplete="off"/>
 						<datalist id="dataList">
 							<ui:repeat id="table" var="ergebnis" value="#{gameBean.gamelist}" varStatus="status">   
 								<OPTION value="#{ergebnis.name}">#{ergebnis.name}</OPTION>
 							</ui:repeat>
 						</datalist>
+						<br/>
 						<label for="price">Price</label>
 						<br/>
 						<h:inputText id="price" value="#{offerBean.offer.price}" />

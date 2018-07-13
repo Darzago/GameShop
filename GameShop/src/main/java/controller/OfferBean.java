@@ -29,6 +29,7 @@ public class OfferBean {
 	public String createOffer(String email)
 	{
 		this.offer.setEmail(email);
+		System.out.println(email+" "+this.offer.getName()+" "+this.offer.getPrice()+" "+this.offer.getAmount());
 		if(this.offer.getEmail() != null && this.offer.getName() != null &&
 		   this.offer.getAmount()!= 0)
 		{
