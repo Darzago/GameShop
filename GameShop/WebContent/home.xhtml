@@ -18,7 +18,7 @@
 				</div>
 				
 				<div id="gameTileCollection">
-					<ui:repeat id="table" var="ergebnis" value="#{gameBean.gamelist}" varStatus="status">   
+					<ui:repeat name="table" id="table" var="ergebnis" value="#{gameBean.gamelist}" varStatus="status">   
 					    <a href="gameDetail.xhtml?gameId=#{ergebnis.name}">
 						    <div class = "gameTile" style="background-image: url(#{ergebnis.imageUrl});
 						    							   background-size: cover;

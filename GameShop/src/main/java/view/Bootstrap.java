@@ -48,7 +48,7 @@ public class Bootstrap extends HttpServlet {
 			dropstmt.execute();
 			
 	        String 	createStatement	= "CREATE TABLE GAMES(NAME VARCHAR2(255) PRIMARY KEY,"
-	        		+ "PICTUREURL VARCHAR2(255),"
+	        		+ "PICTUREURL TEXT,"
 	        		+ "DESCRIPTION TEXT)";
 	        PreparedStatement createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
@@ -81,7 +81,10 @@ public class Bootstrap extends HttpServlet {
         	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Dark Souls 3', 'https://cdn.gamerant.com/wp-content/uploads/dark-souls-3-cover.jpg.optimal.jpg', 'Meh Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Oxenfree', 'https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcYPwI5m0CIBk0DdeMRHf40OKpHuamQrbOgUsgBiCFKkJD3KVnibaCkCioZWF3RqEAdthJpWskfwyf6PQadF8UptX5UsbEmT32_u5n6TIbVB9JkKtcFD3CRtsTMO_LLRinpnaGNLtRO_nf3i5ecoRmOVxbJblSeqt.SBG9Ib1nKfc-&h=1080&w=1920&format=jpg', 'Story Game')";
+       	 	insertstmt = con.prepareStatement(insertStatement);
+       	 	insertstmt.executeUpdate();
+       	
         	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 1', '1234', 'tolles@spiel.de')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
