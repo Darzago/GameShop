@@ -12,6 +12,8 @@
 					<h1>Create Offer</h1>
 					
 					<h:form id="form">
+						<label for="name">Game</label>
+						<br/>
 						<input type="text" id="name" list="dataList" autocomplete="off"/>
 						<datalist id="dataList">
 							<ui:repeat id="table" var="ergebnis" value="#{gameBean.gamelist}" varStatus="status">   
@@ -19,17 +21,23 @@
 							</ui:repeat>
 						</datalist>
 						<p/>
-						<h:inputText id="password" value="#{offerBean.offer.email}"/>
+						<label for="email">Email</label>
+						<br/>
+						<h:inputText id="email" value="#{offerBean.offer.email}"/>
 						<p/>
+						<label for="price">Price</label>
+						<br/>
 						<h:inputText id="price" value="#{offerBean.offer.price}" />
 						<p/>
+						<label for="amount">Amount</label>
+						<br/>
 						<h:inputText id="amount" value="#{offerBean.offer.amount}">
 							<f:validateDoubleRange minimum="0.0"/>
 							
 						</h:inputText>
 						<p/>
 						<h:commandButton id="save" value="Create" action="./home.xhtml"/>
-						<h:commandButton value="cancel" action="./createOffer.xhtml" immediate="true"/>
+						<h:commandButton value="Cancel" action="./createOffer.xhtml" immediate="true"/>
 					</h:form> 
 				
 				</div>

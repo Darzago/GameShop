@@ -48,7 +48,7 @@ public class Bootstrap extends HttpServlet {
 			dropstmt.execute();
 			
 	        String 	createStatement	= "CREATE TABLE GAMES(NAME VARCHAR2(255) PRIMARY KEY,"
-	        		+ "PICTURE BLOB,"
+	        		+ "PICTUREURL VARCHAR2(255),"
 	        		+ "DESCRIPTION TEXT)";
 	        PreparedStatement createstmt = con.prepareStatement(createStatement);
 	        createstmt.executeUpdate();
@@ -69,16 +69,16 @@ public class Bootstrap extends HttpServlet {
 	        createstmt.executeUpdate();
 	        
 	        
-        	String insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GsadAME 1', NULL, 'Tolles Spiel')";
+        	String insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Monster Hunter World', 'https://s.pacn.ws/640/ul/monster-hunter-world-capture-guide-550747.2.jpg?p2kw7s', 'Tolles Spiel, much wow')";
         	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GertAME 2', NULL, 'Geht so Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('GertAME 2', 'www.istmirega.de', 'Geht so Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('GAtrzME 3', NULL, 'Sehr tolles Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('GAtrzME 3', 'www.leckmich.de', 'Sehr tolles Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTURE, DESCRIPTION) VALUES('ASDfAME 4', NULL, 'Meh Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('ASDfAME 4', 'www.scheiﬂen.com', 'Meh Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	

@@ -7,9 +7,21 @@ import java.io.Serializable;
 public class Game implements Serializable{
 	
 	private String name;
-	private Image image;
+	private String imageUrl;
 	private String description;
 	
+	/**
+	 * @return the imageUrl
+	 */
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	/**
+	 * @param imageUrl the imageUrl to set
+	 */
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	/**
 	 * @return the name
 	 */
@@ -22,18 +34,7 @@ public class Game implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	/**
-	 * @return the image
-	 */
-	public Image getImage() {
-		return image;
-	}
-	/**
-	 * @param image the image to set
-	 */
-	public void setImage(Image image) {
-		this.image = image;
-	}
+
 	/**
 	 * @return the description
 	 */
