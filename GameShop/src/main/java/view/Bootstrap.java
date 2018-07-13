@@ -69,16 +69,16 @@ public class Bootstrap extends HttpServlet {
 	        createstmt.executeUpdate();
 	        
 	        
-        	String insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Monster Hunter World', 'https://s.pacn.ws/640/ul/monster-hunter-world-capture-guide-550747.2.jpg?p2kw7s', 'Tolles Spiel, much wow')";
+        	String insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Monster Hunter World', 'http://www.buffed.de/screenshots/original/2018/01/Monster-Hunter-World-Artwork-pc-games_b2article_artwork.jpg', 'Tolles Spiel, much wow')";
         	PreparedStatement insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('GertAME 2', 'www.istmirega.de', 'Geht so Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Rocket League', 'http://www.pcgameshardware.de/screenshots/original/2015/07/Rocket_League_Autofussball_kann_die_Massen_noch_begeistern__6_-pcgh_b2article_artwork.jpg', 'Lustiges Spiel, ganz viele Autos')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('GAtrzME 3', 'www.leckmich.de', 'Sehr tolles Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Assasins Creed: Origins', 'http://static.4players.de/premium/Spiele/97/00/38394-teaser1.jpg', 'Sehr tolles Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('ASDfAME 4', 'www.scheiﬂen.com', 'Meh Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Dark Souls 3', 'https://cdn.gamerant.com/wp-content/uploads/dark-souls-3-cover.jpg.optimal.jpg', 'Meh Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
@@ -95,13 +95,13 @@ public class Bootstrap extends HttpServlet {
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
         	
-        	insertStatement = "INSERT INTO OFFERS VALUES('GAtrzME 3', 'sehr@tolles.spiel', 45.20, 24)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('Assasins Creed: Origins', 'sehr@tolles.spiel', 45.20, 24)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES('GsadAME 1', 'sehr@tolles.spiel', 50, 4)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('Monster Hunter World', 'sehr@tolles.spiel', 50, 4)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO OFFERS VALUES('ASDfAME 4', 'ein@spiel.de', 5, 1)";
+        	insertStatement = "INSERT INTO OFFERS VALUES('Dark Souls 3', 'ein@spiel.de', 5, 1)";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
 		
