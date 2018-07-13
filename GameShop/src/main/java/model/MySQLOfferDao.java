@@ -26,6 +26,35 @@ public class MySQLOfferDao implements OfferDao{
 	}
 	
 	@Override
+	public List<Offer> getOffersForUser(User user) {
+
+        List<Offer> tempList = new ArrayList<Offer>();
+        try
+        {
+        	PreparedStatement pstmt = con.prepareStatement("SELECT * FROM OFFERS WHERE EMAIL = ?");
+        	pstmt.setString(1, user.getEmail());
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) 
+            {
+            	Offer newOffer = new Offer();
+            	newOffer.setName(rs.getString("Name"));
+            	newOffer.setEmail(rs.getString("EMAIL"));
+            	newOffer.setPrice(rs.getDouble("PRICE"));
+            	newOffer.setAmount(rs.getInt("AMOUNT"));
+                tempList.add(newOffer);
+                System.out.println("Offer added to returning offer List");
+            }
+            
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage()+ "whas ist geschein!!!");
+        }
+        
+        return tempList;
+	}
+	
+	@Override
 	public List<Offer> getOffersForGame(Game game) {
 
         List<Offer> tempList = new ArrayList<Offer>();

@@ -11,6 +11,7 @@ import javax.faces.context.FacesContext;
 import model.DAOFactory;
 import model.Game;
 import model.Offer;
+import model.User;
 
 @ManagedBean (name="offerListBean")
 @SessionScoped
@@ -22,6 +23,11 @@ public class OfferListBean
 	public List<Offer> getOffersByGame(Game queryGame)
 	{
 		return DAOFactory.getOfferDao().getOffersForGame(queryGame);
+	}
+	
+	public List<Offer> getOffersByUser(User user)
+	{
+		return DAOFactory.getOfferDao().getOffersForUser(user);
 	}
 	
 	public String buyGameOffer(Offer offer)
