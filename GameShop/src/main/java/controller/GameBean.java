@@ -59,7 +59,7 @@ public class GameBean {
 		System.out.println("findbyname "+searchString);
 		if(!searchString.isEmpty())
 		{
-			System.out.println(DAOFactory.getGameDao().findGamesByName(searchString)+"die Liste");
+			System.out.println(DAOFactory.getGameDao().findGamesByName(searchString)+" die Liste");
 			setGamelist(DAOFactory.getGameDao().findGamesByName(searchString));
 		}
 		else

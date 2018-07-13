@@ -13,23 +13,24 @@
 				<h:form>
 				<div id="searchDiv">
 					 <h:inputText id="searchText" value="#{gameBean.searchString}">
-					 	<f:ajax event="keyup" render="table" listener="#{gameBean.findGamesByName}" />
+					 	<f:ajax event="keyup" render="gameTileCollection" listener="#{gameBean.findGamesByName}" />
 					 </h:inputText>
 				</div>
-				
-				<div id="gameTileCollection">
-					<ui:repeat name="table" id="table" var="ergebnis" value="#{gameBean.gamelist}" varStatus="status">   
-					    <a href="gameDetail.xhtml?gameId=#{ergebnis.name}">
-						    <div class = "gameTile" style="background-image: url(#{ergebnis.imageUrl});
-						    							   background-size: cover;
-						    							   background-repeat: no-repeat;
-						    							   background-position: center;
-						    							   ">
-						        <div class = "gameName"><h2>#{ergebnis.name}</h2></div>
-						   </div>	
-					   </a>        
-				    </ui:repeat>
-			    </div>
+
+					<h:panelGroup id="gameTileCollection" layout="block">
+						<ui:repeat id="table" var="ergebnis" value="#{gameBean.gamelist}" varStatus="status">   
+						    <a href="gameDetail.xhtml?gameId=#{ergebnis.name}">
+							    <div class = "gameTile" style="background-image: url(#{ergebnis.imageUrl});
+							    							   background-size: cover;
+							    							   background-repeat: no-repeat;
+							    							   background-position: center;
+							    							   ">
+							        <div class = "gameName"><h2>#{ergebnis.name}</h2></div>
+							   </div>	
+						   </a>        
+					    </ui:repeat>
+				    </h:panelGroup>
+			    
 				</h:form>
 			</div>
 		</ui:define>
