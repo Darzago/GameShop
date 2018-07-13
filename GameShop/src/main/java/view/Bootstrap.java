@@ -78,12 +78,15 @@ public class Bootstrap extends HttpServlet {
         	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Assasins Creed: Origins', 'http://static.4players.de/premium/Spiele/97/00/38394-teaser1.jpg', 'Sehr tolles Spiel')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Dark Souls 3', 'https://cdn.gamerant.com/wp-content/uploads/dark-souls-3-cover.jpg.optimal.jpg', 'Meh Spiel')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Dark Souls 3', 'https://cdn.gamerant.com/wp-content/uploads/dark-souls-3-cover.jpg.optimal.jpg', 'Dark Souls continues to push the boundaries with the latest, ambitious chapter in the critically-acclaimed and genre-defining series. Prepare yourself and Embrace The Darkness!')";
         	 insertstmt = con.prepareStatement(insertStatement);
         	insertstmt.executeUpdate();
-        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Oxenfree', 'https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcYPwI5m0CIBk0DdeMRHf40OKpHuamQrbOgUsgBiCFKkJD3KVnibaCkCioZWF3RqEAdthJpWskfwyf6PQadF8UptX5UsbEmT32_u5n6TIbVB9JkKtcFD3CRtsTMO_LLRinpnaGNLtRO_nf3i5ecoRmOVxbJblSeqt.SBG9Ib1nKfc-&h=1080&w=1920&format=jpg', 'Story Game')";
+        	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('Oxenfree', 'https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTcYPwI5m0CIBk0DdeMRHf40OKpHuamQrbOgUsgBiCFKkJD3KVnibaCkCioZWF3RqEAdthJpWskfwyf6PQadF8UptX5UsbEmT32_u5n6TIbVB9JkKtcFD3CRtsTMO_LLRinpnaGNLtRO_nf3i5ecoRmOVxbJblSeqt.SBG9Ib1nKfc-&h=1080&w=1920&format=jpg', 'Oxenfree is a supernatural thriller about a group of friends who unwittingly open a ghostly rift. You are Alex, and you’ve just brought your new stepbrother Jonas to an overnight island party gone horribly wrong.')";
        	 	insertstmt = con.prepareStatement(insertStatement);
        	 	insertstmt.executeUpdate();
+       	 	insertStatement = "INSERT INTO GAMES(NAME, PICTUREURL, DESCRIPTION) VALUES('DOOM', 'https://cdn.vox-cdn.com/thumbor/kHBmMvpVv0Ji8Vepsb0v0wCwV5I=/124x0:1474x900/1220x813/filters:focal(124x0:1474x900)/cdn.vox-cdn.com/uploads/chorus_image/image/48988427/doom_alt_boxart.0.0.jpg', 'Story Game')";
+    	 	insertstmt = con.prepareStatement(insertStatement);
+    	 	insertstmt.executeUpdate();
        	
         	insertStatement = "INSERT INTO USERS(Name, Password, Email) VALUES('USER 1', '1234', 'tolles@spiel.de')";
         	 insertstmt = con.prepareStatement(insertStatement);
