@@ -13,6 +13,7 @@
 					<h1>Login</h1>
 					<h:form id="form">
 						<label for="email">E-mail</label>
+						<br/>
 						<h:inputText id="email" value="#{userBean.user.email}">
 							<f:validator validatorId="emailValidator"  placeholder="email@example.com" />
 							<f:ajax render="errorMessageEmail" event="keyup"/>
@@ -21,6 +22,7 @@
 						
 						<h:message id="errorMessageEmail" for="email"></h:message>
 						<label for="password">Password</label>
+						<br/>
 						<h:inputText id="password" value="#{userBean.user.password}"/>
 						<h:commandButton id="tryLogin" value="login" action="#{userBean.loginUser}"/>
 						<p/>	

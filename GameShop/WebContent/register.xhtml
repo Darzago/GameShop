@@ -12,12 +12,15 @@
 					<h1>Register</h1>
 					<h:form id="form">
 						<label for="name">Username</label>
+						<br/>
 						<h:inputText id="name" value="#{userBean.user.name}"/>
 						<p/>
 						<label for="password">Password</label>
+						<br/>
 						<h:inputText id="password" value="#{userBean.user.password}"/>
 						<p/>
 						<label for="email">E-mail</label>
+						<br/>
 						<h:inputText id="email" value="#{userBean.user.email}">
 							<f:validator validatorId="emailValidator"  />
 						</h:inputText>
